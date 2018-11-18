@@ -12,11 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\FastFoodWorkshop.Data\FastFoodWorkshop.Data.csproj" />
+    <ProjectReference Include="..\FastFoodWorkshop.Models\FastFoodWorkshop.Models.csproj" />
   </ItemGroup>
 
 </Project>

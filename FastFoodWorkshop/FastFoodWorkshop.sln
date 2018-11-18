@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastFoodWorkshop", "FastFoo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFoodWorkshop.Data", "FastFoodWorkshop.Data\FastFoodWorkshop.Data.csproj", "{946DE36C-0622-429F-B0F1-488250078528}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFoodWorkshop.Models", "FastFoodWorkshop.Models\FastFoodWorkshop.Models.csproj", "{A001582C-779E-429E-8B50-621BC761024E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{946DE36C-0622-429F-B0F1-488250078528}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{946DE36C-0622-429F-B0F1-488250078528}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{946DE36C-0622-429F-B0F1-488250078528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A001582C-779E-429E-8B50-621BC761024E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A001582C-779E-429E-8B50-621BC761024E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A001582C-779E-429E-8B50-621BC761024E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A001582C-779E-429E-8B50-621BC761024E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

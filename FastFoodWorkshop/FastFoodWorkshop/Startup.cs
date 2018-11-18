@@ -1,19 +1,17 @@
 ﻿namespace FastFoodWorkshop
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
+    using Data;
     using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
-    using Microsoft.AspNetCore.HttpsPolicy;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
-    using FastFoodWorkshop.Data;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
+    using Models;
 
     public class Startup
     {
@@ -37,8 +35,18 @@
             services.AddDbContext<FastFoodWorkshopDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddEntityFrameworkStores<FastFoodWorkshopDbContext>();
+            services.AddIdentity<FastFoodUser, IdentityRole<int>>()
+                .AddDefaultUI()
+                .AddEntityFrameworkStores<FastFoodWorkshopDbContext>()
+                .AddDefaultTokenProviders();
+
+            services.AddScoped<RoleManager<IdentityRole<int>>>();
+
+            services.ConfigureApplicationCookie(options => {
+                options.LoginPath = $"/Account/Login";
+                options.LogoutPath = $"/Identity/Account/Logout";
+                options.AccessDeniedPath = $"/Account/AccessDenied";
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
