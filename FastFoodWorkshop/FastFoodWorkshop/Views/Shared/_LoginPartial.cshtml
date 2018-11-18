@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Identity
 
-@inject SignInManager<User> SignInManager
-@inject UserManager<User> UserManager
+@inject SignInManager<FastFoodUser> SignInManager
+@inject UserManager<FastFoodUser> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {
