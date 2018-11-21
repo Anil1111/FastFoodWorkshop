@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FastFoodWorkshop.Data.Migrations
 {
     [DbContext(typeof(FastFoodWorkshopDbContext))]
-    [Migration("20181119213419_Initial")]
+    [Migration("20181121133707_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,7 +27,11 @@ namespace FastFoodWorkshop.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ApplicantName")
+                    b.Property<string>("ApplicantFirstName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ApplicantLastName")
                         .IsRequired()
                         .HasMaxLength(50);
 
@@ -132,7 +136,7 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<DateTime?>("EndYear");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("OrganizationName")
                         .IsRequired()
                         .HasMaxLength(50);
 
@@ -161,7 +165,11 @@ namespace FastFoodWorkshop.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(60);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(50);
 
@@ -198,7 +206,11 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(60);
+
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(60);
 

@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
 
     public class Restaurant
     {
@@ -18,7 +17,7 @@
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100, MinimumLength = 5)]
+        [StringLength(100)]
         public string Address { get; set; }
 
         public virtual ICollection<Complaint> Complaints { get; set; }

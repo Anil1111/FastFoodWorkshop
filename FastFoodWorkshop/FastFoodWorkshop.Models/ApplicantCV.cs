@@ -17,8 +17,12 @@
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50, MinimumLength = 5)]
-        public string ApplicantName { get; set; }
+        [StringLength(50)]
+        public string ApplicantFirstName { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string ApplicantLastName { get; set; }
 
         public byte[] Picture { get; set; }
 

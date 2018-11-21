@@ -15,11 +15,15 @@
         }
 
         [Required]
-        [StringLength(60, MinimumLength = 5)]
-        public string FullName { get; set; }
+        [StringLength(60)]
+        public string FirstName { get; set; }
 
         [Required]
-        [StringLength(100, MinimumLength = 5)]
+        [StringLength(60)]
+        public string LastName { get; set; }
+
+        [Required]
+        [StringLength(100)]
         public string Address { get; set; }
 
         public DateTime BirthDate { get; set; }

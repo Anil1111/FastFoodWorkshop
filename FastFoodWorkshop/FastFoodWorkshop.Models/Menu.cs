@@ -16,7 +16,7 @@
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50, MinimumLength = 5)]
+        [StringLength(50)]
         public string Name { get; set; }
 
         public double ProteinsQuantity => this.Products.Sum(e => e.ProteinsQuantity);

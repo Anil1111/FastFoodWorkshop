@@ -9,7 +9,7 @@
         public int Id { get; set; }
 
         [Required]
-        [StringLength(25, MinimumLength = 1)]
+        [StringLength(25)]
         public string Model { get; set; }
 
         public double Mileage { get; set; }

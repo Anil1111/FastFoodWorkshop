@@ -13,8 +13,8 @@
         public DateTime? EndYear { get; set; }
 
         [Required]
-        [StringLength(50, MinimumLength = 5)]
-        public string Name { get; set; }
+        [StringLength(50)]
+        public string OrganizationName { get; set; }
 
         public int ApplicantCVId { get; set; }
         public virtual ApplicantCV ApplicantCV { get; set; }
