@@ -1,4 +1,4 @@
-﻿@inject SignInManager<FastFoodUser> SignInManager
+﻿@inject SignInManager<FastFoodWorkshop.Models.FastFoodUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
