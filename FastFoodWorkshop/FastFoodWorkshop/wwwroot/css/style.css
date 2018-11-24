@@ -1,0 +1,19 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    border: 0;
+    width: 98%;
+}
+
+.bg-ffw {
+    background-color: #f9ab36;
+}
+
+.navbar-brand {
+    font-size: 25px;
+}
+
+li {
+    font-size: 17px;
+}
+

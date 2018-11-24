@@ -43,9 +43,9 @@
             services.AddScoped<RoleManager<IdentityRole<int>>>();
 
             services.ConfigureApplicationCookie(options => {
-                options.LoginPath = $"/Account/Login";
+                options.LoginPath = $"/Identity/Account/Login";
                 options.LogoutPath = $"/Identity/Account/Logout";
-                options.AccessDeniedPath = $"/Account/AccessDenied";
+                options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -68,7 +68,6 @@
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
             app.UseAuthentication();
 
             app.UseMvc(routes =>
