@@ -8,9 +8,9 @@
     </title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/css/reset.css" />
-        <link rel="stylesheet" href="~/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="~/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/style.css" />
     </environment>
 </head>
 <body>
@@ -40,17 +40,19 @@
                 </ul>
             </div>
         </nav>
-    </div>
-    <main>
-        @RenderBody()
-    </main>
-    <footer>
-        <div class="container-fluid bg-ffw">
-            <div>
-                &copy; Fast Food Workshop Inc. All rights reserved.
-            </div>
+        <div class="jumbotron mt-3 ffw-jumbo-image">
+            <main>
+                @RenderBody()
+            </main>
         </div>
-    </footer>
+        <footer>
+            <div class="container-fluid bg-ffw">
+                <div class="text-center">
+                    &copy; Fast Food Workshop Inc. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
     <partial name="_CookieConsentPartial" />
     <environment include="Development">
         <script src="~/js/jquery-3.3.1.min.js"></script>

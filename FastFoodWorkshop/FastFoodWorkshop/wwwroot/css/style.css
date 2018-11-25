@@ -17,3 +17,24 @@ li {
     font-size: 17px;
 }
 
+.ffw-jumbo-image {
+    background-image: url("../images/pic03.jpg");
+    background-size : cover;
+    height: 1000px;
+}
+
+.ffw-text-white {
+    color: white;
+}
+
+.hr-size {
+    height: 2px;
+}
+
+.width-size {
+    width: 48%;
+}
+
+.ffw-color-white {
+    color: white;
+}

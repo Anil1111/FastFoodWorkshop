@@ -39,10 +39,12 @@ namespace FastFoodWorkshop.Areas.Identity.Pages.Account
         {
             [Required]
             [EmailAddress]
+            [Display(Name = "Email", Prompt = "Email")]
             public string Email { get; set; }
 
             [Required]
             [DataType(DataType.Password)]
+            [Display(Name = "Password", Prompt = "Password")]
             public string Password { get; set; }
 
             [Display(Name = "Remember me?")]

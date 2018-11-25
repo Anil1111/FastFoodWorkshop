@@ -41,18 +41,43 @@
         public class InputModel
         {
             [Required]
+            [Display(Name = "First Name", Prompt = "First Name")]
+            [DataType(DataType.Text)]
+            public string FirstName { get; set; }
+
+            [Required]
+            [Display(Name = "Last Name", Prompt = "Last Name")]
+            [DataType(DataType.Text)]
+            public string LastName { get; set; }
+
+            [Required]
+            [Display(Name = "Username", Prompt = "Userame")]
+            [DataType(DataType.Text)]
+            public string Username { get; set; }
+
+            [Required]
+            [Display(Name = "Address", Prompt = "Address")]
+            [DataType(DataType.Text)]
+            public string Address { get; set; }
+
+            [Required]
+            [Display(Name = "Date of birth", Prompt = "dd-MM-yyyy")]
+            [DataType(DataType.Text)]
+            public DateTime DateOfBirth { get; set; }
+
+            [Required]
             [EmailAddress]
-            [Display(Name = "Email")]
+            [Display(Name = "Email", Prompt = "example@example.org")]
             public string Email { get; set; }
 
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "Password", Prompt = "Password")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
+            [Display(Name = "Confirm password", Prompt = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
         }
