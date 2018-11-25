@@ -135,7 +135,7 @@ namespace FastFoodWorkshop.Data.Migrations
                     AccessFailedCount = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(maxLength: 60, nullable: false),
                     LastName = table.Column<string>(maxLength: 60, nullable: false),
-                    Address = table.Column<string>(maxLength: 100, nullable: false),
+                    Address = table.Column<string>(maxLength: 100, nullable: true),
                     BirthDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>

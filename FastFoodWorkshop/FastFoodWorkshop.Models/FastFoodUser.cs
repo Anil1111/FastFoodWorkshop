@@ -22,7 +22,6 @@
         [StringLength(60)]
         public string LastName { get; set; }
 
-        [Required]
         [StringLength(100)]
         public string Address { get; set; }
 

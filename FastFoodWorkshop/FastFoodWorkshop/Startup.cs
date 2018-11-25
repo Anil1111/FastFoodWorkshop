@@ -1,6 +1,8 @@
 ﻿namespace FastFoodWorkshop
 {
     using Data;
+    using FastFoodWorkshop.Service;
+    using FastFoodWorkshop.Service.Contracts;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -11,6 +13,7 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
+    using Middleware;
     using Models;
 
     public class Startup
@@ -41,6 +44,8 @@
                 .AddDefaultTokenProviders();
 
             services.AddScoped<RoleManager<IdentityRole<int>>>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddTransient<SeedAdminAndRolesMiddleware>();
 
             services.ConfigureApplicationCookie(options => {
                 options.LoginPath = $"/Identity/Account/Login";
@@ -64,7 +69,8 @@
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-            
+
+            app.UseSeedAdminAndRoles();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

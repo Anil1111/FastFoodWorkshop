@@ -195,7 +195,6 @@ namespace FastFoodWorkshop.Data.Migrations
                     b.Property<int>("AccessFailedCount");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasMaxLength(100);
 
                     b.Property<DateTime>("BirthDate");

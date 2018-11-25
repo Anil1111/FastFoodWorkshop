@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FastFoodWorkshop.Data.Migrations
 {
     [DbContext(typeof(FastFoodWorkshopDbContext))]
-    [Migration("20181125180306_Initial")]
+    [Migration("20181125210908_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -197,7 +197,6 @@ namespace FastFoodWorkshop.Data.Migrations
                     b.Property<int>("AccessFailedCount");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasMaxLength(100);
 
                     b.Property<DateTime>("BirthDate");
