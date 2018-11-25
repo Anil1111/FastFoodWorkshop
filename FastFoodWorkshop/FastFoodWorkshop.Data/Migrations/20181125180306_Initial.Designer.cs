@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FastFoodWorkshop.Data.Migrations
 {
     [DbContext(typeof(FastFoodWorkshopDbContext))]
-    [Migration("20181121133707_Initial")]
+    [Migration("20181125180306_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,6 +42,8 @@ namespace FastFoodWorkshop.Data.Migrations
                         .HasMaxLength(60);
 
                     b.Property<int>("EmployeeId");
+
+                    b.Property<bool>("IsHired");
 
                     b.Property<string>("MotivationalLetter")
                         .IsRequired()

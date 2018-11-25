@@ -217,6 +217,7 @@ namespace FastFoodWorkshop.Data.Migrations
                     MotivationalLetter = table.Column<string>(maxLength: 2500, nullable: false),
                     PhoneNumber = table.Column<string>(nullable: false),
                     Email = table.Column<string>(maxLength: 60, nullable: false),
+                    IsHired = table.Column<bool>(nullable: false),
                     EmployeeId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

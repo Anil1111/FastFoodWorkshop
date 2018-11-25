@@ -43,6 +43,8 @@
         [StringLength(60, MinimumLength = 5)]
         public string Email { get; set; }
 
+        public bool IsHired { get; set; }
+
         public int EmployeeId { get; set; }
         public virtual Employee Employee { get; set; }
 

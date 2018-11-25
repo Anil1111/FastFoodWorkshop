@@ -1,6 +1,4 @@
-using System;
-
-namespace FastFoodWorkshop.Models
+namespace FastFoodWorkshop.BindingModels
 {
     public class ErrorViewModel
     {

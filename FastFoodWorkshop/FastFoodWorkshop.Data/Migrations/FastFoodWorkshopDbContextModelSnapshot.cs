@@ -41,6 +41,8 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<int>("EmployeeId");
 
+                    b.Property<bool>("IsHired");
+
                     b.Property<string>("MotivationalLetter")
                         .IsRequired()
                         .HasMaxLength(2500);

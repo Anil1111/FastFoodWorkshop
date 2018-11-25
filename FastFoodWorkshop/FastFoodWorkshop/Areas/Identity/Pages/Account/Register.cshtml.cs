@@ -60,9 +60,8 @@
             [DataType(DataType.Text)]
             public string Address { get; set; }
 
-            [Required]
-            [Display(Name = "Date of birth", Prompt = "dd-MM-yyyy")]
-            [DataType(DataType.Text)]
+            [DataType(DataType.Date)]
+            [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
             public DateTime DateOfBirth { get; set; }
 
             [Required]
