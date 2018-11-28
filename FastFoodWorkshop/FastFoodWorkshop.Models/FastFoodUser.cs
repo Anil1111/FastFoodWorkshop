@@ -14,11 +14,9 @@
             this.Complaints = new HashSet<Complaint>();
         }
 
-        [Required]
         [StringLength(60)]
         public string FirstName { get; set; }
 
-        [Required]
         [StringLength(60)]
         public string LastName { get; set; }
 

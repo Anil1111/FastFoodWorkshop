@@ -1,8 +1,8 @@
 ﻿namespace FastFoodWorkshop
 {
     using Data;
-    using FastFoodWorkshop.Service;
-    using FastFoodWorkshop.Service.Contracts;
+    using Service;
+    using Service.Contracts;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -43,11 +43,20 @@
                 .AddEntityFrameworkStores<FastFoodWorkshopDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddAuthentication()
+                .AddFacebook(facebook =>
+                {
+                    facebook.AppId = Configuration["Authentication:Facebook:AppId"];
+                    facebook.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+                });
+
             services.AddScoped<RoleManager<IdentityRole<int>>>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IFacebookService, FacebookService>();
             services.AddTransient<SeedAdminAndRolesMiddleware>();
 
-            services.ConfigureApplicationCookie(options => {
+            services.ConfigureApplicationCookie(options =>
+            {
                 options.LoginPath = $"/Identity/Account/Login";
                 options.LogoutPath = $"/Identity/Account/Logout";
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";

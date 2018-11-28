@@ -1,18 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using FastFoodWorkshop.Models;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-
-namespace FastFoodWorkshop.Areas.Identity.Pages.Account
+﻿namespace FastFoodWorkshop.Areas.Identity.Pages.Account
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Authorization;
+    using FastFoodWorkshop.Models;
+    using Microsoft.AspNetCore.Authentication;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.RazorPages;
+    using Microsoft.Extensions.Logging;
+    using System.Security.Claims;
+
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
@@ -42,6 +43,21 @@ namespace FastFoodWorkshop.Areas.Identity.Pages.Account
             [Display(Name = "Email", Prompt = "Email")]
             public string Email { get; set; }
 
+            //[Required]
+            //[DataType(DataType.Text)]
+            //[Display(Name = "Firstname", Prompt = "Firstname")]
+            //public string Firstname { get; set; }
+
+            //[Required]
+            //[DataType(DataType.Text)]
+            //[Display(Name = "Lastname", Prompt = "Lastname")]
+            //public string Lastname { get; set; }
+
+            //[Required]
+            //[DataType(DataType.Text)]
+            //[Display(Name = "Username", Prompt = "Username")]
+            //public string Username { get; set; }
+
             [Required]
             [DataType(DataType.Password)]
             [Display(Name = "Password", Prompt = "Password")]
@@ -60,7 +76,6 @@ namespace FastFoodWorkshop.Areas.Identity.Pages.Account
 
             returnUrl = returnUrl ?? Url.Content("~/");
 
-            // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -74,8 +89,6 @@ namespace FastFoodWorkshop.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
                 if (result.Succeeded)
                 {

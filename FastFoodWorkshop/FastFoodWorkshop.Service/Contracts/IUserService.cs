@@ -6,4 +6,5 @@
     {
         FastFoodUser CreateManager(string firstName, string lastName, string userName, string dateOfBirth, string address);
     }
+
 }
