@@ -12,11 +12,11 @@
             <form method="post">
                 <hr class="hr-size ffw-color-white" />
                 <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Input.Email" class="ffw-text-white"></label>
-                    <input asp-for="Input.Email" class="form-control" />
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
+                @*<div class="form-group">
+                        <label asp-for="Input.Email" class="ffw-text-white"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>*@
                 @*<div class="form-group">
                         <label asp-for="Input.Firstname" class="ffw-text-white"></label>
                         <input asp-for="Input.Firstname" class="form-control" />
@@ -27,11 +27,11 @@
                         <input asp-for="Input.Lastname" class="form-control" />
                         <span asp-validation-for="Input.Lastname" class="text-danger"></span>
                     </div>*@
-                @*<div class="form-group">
-                        <label asp-for="Input.Username" class="ffw-text-white"></label>
-                        <input asp-for="Input.Username" class="form-control" />
-                        <span asp-validation-for="Input.Username" class="text-danger"></span>
-                    </div>*@
+                <div class="form-group">
+                    <label asp-for="Input.Username" class="ffw-text-white"></label>
+                    <input asp-for="Input.Username" class="form-control" />
+                    <span asp-validation-for="Input.Username" class="text-danger"></span>
+                </div>
                 <div class="form-group">
                     <label asp-for="Input.Password" class="ffw-text-white"></label>
                     <input asp-for="Input.Password" class="form-control" />

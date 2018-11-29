@@ -20,7 +20,8 @@
             string lastName,
             string userName,
             string dateOfBirth,
-            string address)
+            string address,
+            string email)
         {
 
             var birthDate = DateTime.ParseExact(dateOfBirth, "dd-MM-yyyy", CultureInfo.InstalledUICulture);
@@ -32,6 +33,7 @@
                 LastName = lastName,
                 BirthDate = birthDate,
                 Address = address,
+                Email = email,
             };
 
             return manager;

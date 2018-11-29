@@ -50,7 +50,8 @@
                       Configuration["AdminInfo:ManagerLastName"],
                       Configuration["AdminInfo:ManagerName"],
                       Configuration["AdminInfo:ManagerBirthDate"],
-                      Configuration["AdminInfo:ManagerAddress"]);
+                      Configuration["AdminInfo:ManagerAddress"],
+                      Configuration["AdminInfo:ManagerEmail"]);
 
                 await userManager.CreateAsync(user, Configuration["AdminInfo:ManagerPassword"]);
                 await userManager.AddToRoleAsync(user, StringConstants.ManagerRole);

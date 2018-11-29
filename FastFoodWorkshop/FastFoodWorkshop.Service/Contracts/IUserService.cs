@@ -4,7 +4,7 @@
 
     public interface IUserService
     {
-        FastFoodUser CreateManager(string firstName, string lastName, string userName, string dateOfBirth, string address);
+        FastFoodUser CreateManager(string firstName, string lastName, string userName, string dateOfBirth, string address, string email);
     }
 
 }

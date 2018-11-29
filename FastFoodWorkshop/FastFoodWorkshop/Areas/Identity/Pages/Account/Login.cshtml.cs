@@ -38,10 +38,10 @@
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
-            [Display(Name = "Email", Prompt = "Email")]
-            public string Email { get; set; }
+            //[Required]
+            //[EmailAddress]
+            //[Display(Name = "Email", Prompt = "Email")]
+            //public string Email { get; set; }
 
             //[Required]
             //[DataType(DataType.Text)]
@@ -53,10 +53,10 @@
             //[Display(Name = "Lastname", Prompt = "Lastname")]
             //public string Lastname { get; set; }
 
-            //[Required]
-            //[DataType(DataType.Text)]
-            //[Display(Name = "Username", Prompt = "Username")]
-            //public string Username { get; set; }
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Username", Prompt = "Username")]
+            public string Username { get; set; }
 
             [Required]
             [DataType(DataType.Password)]
@@ -89,7 +89,7 @@
 
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
+                var result = await _signInManager.PasswordSignInAsync(Input.Username, Input.Password, Input.RememberMe, lockoutOnFailure: true);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
