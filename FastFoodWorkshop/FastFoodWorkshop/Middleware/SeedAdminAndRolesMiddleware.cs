@@ -7,15 +7,19 @@
     using Service.Contracts;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Http;
+    using Microsoft.Extensions.Configuration;
 
     public class SeedAdminAndRolesMiddleware
     {
         private readonly RequestDelegate next;
 
-        public SeedAdminAndRolesMiddleware(RequestDelegate next)
+        public SeedAdminAndRolesMiddleware(RequestDelegate next, IConfiguration configuration)
         {
             this.next = next;
+            this.Configuration = configuration;
         }
+
+        public IConfiguration Configuration { get; }
 
         public async Task InvokeAsync(
             HttpContext context,
@@ -37,18 +41,18 @@
                 await roleManager.CreateAsync(new IdentityRole<int>(StringConstants.UserRole));
             }
 
-            var user = userManager.Users.FirstOrDefault(x => x.UserName == StringConstants.ManagerUsername);
+            var user = userManager.Users.FirstOrDefault(x => x.UserName == Configuration["AdminInfo:ManagerName"]);
 
             if (user == null)
             {
-                  user =  userService.CreateManager(
-                        StringConstants.ManagerFirstName,
-                        StringConstants.ManagerLastName,
-                        StringConstants.ManagerUsername,
-                        StringConstants.ManagerBirthDate,
-                        StringConstants.ManagerAddress);
+                user = userService.CreateManager(
+                      Configuration["AdminInfo:ManagerFirstName"],
+                      Configuration["AdminInfo:ManagerLastName"],
+                      Configuration["AdminInfo:ManagerName"],
+                      Configuration["AdminInfo:ManagerBirthDate"],
+                      Configuration["AdminInfo:ManagerAddress"]);
 
-                await userManager.CreateAsync(user, StringConstants.ManagerPassword);
+                await userManager.CreateAsync(user, Configuration["AdminInfo:ManagerPassword"]);
                 await userManager.AddToRoleAsync(user, StringConstants.ManagerRole);
             }
 
