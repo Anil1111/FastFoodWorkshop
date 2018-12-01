@@ -17,6 +17,10 @@ li {
     font-size: 17px;
 }
 
+.button-size {
+    font-size: 17px;
+}
+
 .ffw-jumbo-image {
     background-image: url("../images/doner/doner00.jpg");
     background-size : cover;

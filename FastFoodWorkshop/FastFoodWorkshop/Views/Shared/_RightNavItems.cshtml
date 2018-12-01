@@ -7,12 +7,12 @@
 {
     var user = await UserManager.GetUserAsync(User);
 
-    <li class="nav-item active">
-        <h4>@user.FirstName</h4>
-    </li>
+    @*<li class="nav-item active">
+            <h4>@user.FirstName</h4>
+        </li>*@
     <li class="nav-item active">
         <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm">
-            <button class="btn btn-default" style="color: #8e3904" type="submit">Logout</button>
+            <button class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0" style="color: #8e3904" type="submit">Logout</button>
         </form>
     </li>
 }
