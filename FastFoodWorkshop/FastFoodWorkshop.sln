@@ -9,7 +9,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastFoodWorkshop.Data", "Fa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastFoodWorkshop.Models", "FastFoodWorkshop.Models\FastFoodWorkshop.Models.csproj", "{A001582C-779E-429E-8B50-621BC761024E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFoodWorkshop.Service", "FastFoodWorkshop.Service\FastFoodWorkshop.Service.csproj", "{5B8C728F-BB87-4029-B809-B6CE20F3652C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastFoodWorkshop.Service", "FastFoodWorkshop.Service\FastFoodWorkshop.Service.csproj", "{5B8C728F-BB87-4029-B809-B6CE20F3652C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{89F8E866-D3C0-4D0B-87B3-90F9644B3739}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{A6C04247-5AAC-44D9-820F-9A569826584B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{463F349E-E102-4B5C-B180-228262B467FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastFoodWorkshop.Common", "FastFoodWorkshop.Common\FastFoodWorkshop.Common.csproj", "{33BC767D-754F-4F75-AC07-4B8D0AC297BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{48D300F2-EC97-4A1F-BCB4-7F01AAAFF555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFoodWorkshop.ViewModels", "FastFoodWorkshop.ViewModels\FastFoodWorkshop.ViewModels.csproj", "{56AF9279-E869-4B91-9A94-76F56EDB62D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +45,25 @@ Global
 		{5B8C728F-BB87-4029-B809-B6CE20F3652C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B8C728F-BB87-4029-B809-B6CE20F3652C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B8C728F-BB87-4029-B809-B6CE20F3652C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33BC767D-754F-4F75-AC07-4B8D0AC297BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33BC767D-754F-4F75-AC07-4B8D0AC297BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33BC767D-754F-4F75-AC07-4B8D0AC297BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33BC767D-754F-4F75-AC07-4B8D0AC297BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56AF9279-E869-4B91-9A94-76F56EDB62D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56AF9279-E869-4B91-9A94-76F56EDB62D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56AF9279-E869-4B91-9A94-76F56EDB62D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56AF9279-E869-4B91-9A94-76F56EDB62D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49978F3A-9D0F-4C08-8194-3DD657A9741E} = {89F8E866-D3C0-4D0B-87B3-90F9644B3739}
+		{946DE36C-0622-429F-B0F1-488250078528} = {A6C04247-5AAC-44D9-820F-9A569826584B}
+		{A001582C-779E-429E-8B50-621BC761024E} = {A6C04247-5AAC-44D9-820F-9A569826584B}
+		{5B8C728F-BB87-4029-B809-B6CE20F3652C} = {48D300F2-EC97-4A1F-BCB4-7F01AAAFF555}
+		{33BC767D-754F-4F75-AC07-4B8D0AC297BA} = {A6C04247-5AAC-44D9-820F-9A569826584B}
+		{56AF9279-E869-4B91-9A94-76F56EDB62D0} = {48D300F2-EC97-4A1F-BCB4-7F01AAAFF555}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9872C1AF-E3B4-4B1D-BDB7-C7201C42C2FE}

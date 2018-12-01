@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FastFoodWorkshop.Data\FastFoodWorkshop.Data.csproj" />
+    <ProjectReference Include="..\FastFoodWorkshop.ViewModels\FastFoodWorkshop.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

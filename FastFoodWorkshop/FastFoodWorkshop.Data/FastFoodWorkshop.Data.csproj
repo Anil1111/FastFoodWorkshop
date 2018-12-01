@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FastFoodWorkshop.Common\FastFoodWorkshop.Common.csproj" />
     <ProjectReference Include="..\FastFoodWorkshop.Models\FastFoodWorkshop.Models.csproj" />
   </ItemGroup>
 

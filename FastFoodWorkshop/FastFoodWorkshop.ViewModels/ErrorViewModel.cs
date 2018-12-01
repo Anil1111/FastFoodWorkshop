@@ -1,4 +1,4 @@
-namespace FastFoodWorkshop.BindingModels
+namespace FastFoodWorkshop.ViewModels
 {
     public class ErrorViewModel
     {

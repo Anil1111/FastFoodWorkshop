@@ -15,6 +15,7 @@
     using Microsoft.Extensions.Logging;
     using Middleware;
     using Models;
+    using Common.Contracts;
 
     public class Startup
     {
@@ -50,11 +51,6 @@
                     facebook.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
                 });
 
-            services.AddScoped<RoleManager<IdentityRole<int>>>();
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IFacebookService, FacebookService>();
-            services.AddTransient<SeedAdminAndRolesMiddleware>();
-
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = $"/Identity/Account/Login";
@@ -63,6 +59,12 @@
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //App services
+            services.AddScoped<RoleManager<IdentityRole<int>>>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IFacebookService, FacebookService>();
+            services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
+            services.AddTransient<SeedAdminAndRolesMiddleware>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
