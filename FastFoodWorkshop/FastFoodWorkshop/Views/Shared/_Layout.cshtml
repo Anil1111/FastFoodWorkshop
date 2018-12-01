@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@model FastFoodWorkshop.Models.FastFoodUser
+@inject UserManager<FastFoodUser> UserManager
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,7 +9,6 @@
     <title>
         @ViewData["Title"] - FastFoodWorkshop
     </title>
-
     <environment include="Development">
         <link rel="stylesheet" type="text/css" href="~/css/reset.css" />
         <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FastFoodWorkshop.Data.Migrations
 {
     [DbContext(typeof(FastFoodWorkshopDbContext))]
-    [Migration("20181129125852_Initial")]
+    [Migration("20181201190457_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -181,6 +181,10 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<decimal>("Salary");
 
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
                     b.HasKey("Id");
 
                     b.HasIndex("RestaurantId");
@@ -208,10 +212,12 @@ namespace FastFoodWorkshop.Data.Migrations
                     b.Property<bool>("EmailConfirmed");
 
                     b.Property<string>("FirstName")
-                        .HasMaxLength(60);
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.Property<string>("LastName")
-                        .HasMaxLength(60);
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.Property<bool>("LockoutEnabled");
 

@@ -16,7 +16,7 @@
             string email)
         {
 
-            var birthDate = DateTime.ParseExact(dateOfBirth, "dd-MM-yyyy", CultureInfo.InstalledUICulture);
+            var birthDate = DateTime.ParseExact(dateOfBirth, "dd-MM-yyyy", CultureInfo.InvariantCulture);
 
             var manager = new FastFoodUser()
             {

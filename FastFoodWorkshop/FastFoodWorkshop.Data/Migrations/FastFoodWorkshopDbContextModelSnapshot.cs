@@ -179,6 +179,10 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<decimal>("Salary");
 
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
                     b.HasKey("Id");
 
                     b.HasIndex("RestaurantId");
@@ -206,10 +210,12 @@ namespace FastFoodWorkshop.Data.Migrations
                     b.Property<bool>("EmailConfirmed");
 
                     b.Property<string>("FirstName")
-                        .HasMaxLength(60);
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.Property<string>("LastName")
-                        .HasMaxLength(60);
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.Property<bool>("LockoutEnabled");
 
