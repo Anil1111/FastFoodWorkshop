@@ -1,6 +1,5 @@
 ﻿namespace FastFoodWorkshop.Service
 {
-    using Data;
     using Contracts;
     using Models;
     using System;
@@ -8,13 +7,6 @@
 
     public class UserService : IUserService
     {
-        private readonly FastFoodWorkshopDbContext db;
-
-        public UserService(FastFoodWorkshopDbContext db)
-        {
-            this.db = db;
-        }
-
         public FastFoodUser CreateManager(
             string firstName,
             string lastName,

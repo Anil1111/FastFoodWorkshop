@@ -1,6 +1,5 @@
 ﻿namespace FastFoodWorkshop.Data
 {
-    using FastFoodWorkshop.Common.Contracts;
     using Microsoft.EntityFrameworkCore;
     using System;
     using System.Linq;

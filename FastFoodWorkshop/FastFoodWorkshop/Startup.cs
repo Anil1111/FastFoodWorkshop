@@ -15,7 +15,6 @@
     using Microsoft.Extensions.Logging;
     using Middleware;
     using Models;
-    using Common.Contracts;
 
     public class Startup
     {

@@ -1,4 +1,4 @@
-﻿namespace FastFoodWorkshop.Common.Contracts
+﻿namespace FastFoodWorkshop.Data
 {
     using System.Linq;
     using System.Threading.Tasks;
@@ -16,5 +16,4 @@
 
         Task<int> SaveChangesAsync();
     }
-
 }
