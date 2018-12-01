@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<FastFoodUser> SignInManager
+@inject UserManager<FastFoodUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    if (User.IsInRole("Employee"))
+    {
+
+    }
+    else if (User.IsInRole("Manager"))
+    {
+
+    }
+    else
+    {
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">My Profile</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Propose Recipe</a>
+        </li>
+    }
+}
+<li class="nav-item active">
+    <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Home</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Who are we?</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Order food</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Join Us</a>
+</li>

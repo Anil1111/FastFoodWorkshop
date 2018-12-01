@@ -13,7 +13,6 @@
     <li class="nav-item active">
         <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm">
             <button class="btn btn-default" style="color: #8e3904" type="submit">Logout</button>
-            @*<a class="nav-link" style="color: #8e3904" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">Logout</a>*@
         </form>
     </li>
 }
@@ -26,3 +25,4 @@ else
         <a class="nav-link" style="color: #8e3904" asp-area="Identity" asp-page="/Account/Login">Login</a>
     </li>
 }
+

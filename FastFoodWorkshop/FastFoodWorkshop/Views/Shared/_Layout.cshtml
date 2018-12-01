@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@model FastFoodWorkshop.Models.FastFoodUser
+
+@inject SignInManager<FastFoodUser> SignInManager
 @inject UserManager<FastFoodUser> UserManager
 <!DOCTYPE html>
 <html>
@@ -24,21 +25,10 @@
             </button>
             <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavDropdown">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Who are we?</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Order food</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Join Us</a>
-                    </li>
+                    <partial name="_LeftNavItems" />
                 </ul>
                 <ul class="nav navbar-nav">
-                    <partial name="_LoginPartial">
+                    <partial name="_RightNavItems" />
                 </ul>
             </div>
         </nav>

@@ -21,4 +21,10 @@
     <Folder Include="Logs\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Shared\_LeftNavItems.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

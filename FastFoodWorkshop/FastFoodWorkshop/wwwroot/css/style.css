@@ -27,6 +27,10 @@ li {
     color: white;
 }
 
+.ffw-text-brown {
+    color: #8e3904;
+}
+
 .hr-size {
     height: 2px;
 }
@@ -35,6 +39,4 @@ li {
     width: 48%;
 }
 
-.ffw-color-white {
-    color: white;
-}
+
