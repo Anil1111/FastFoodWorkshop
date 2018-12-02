@@ -1,7 +1,6 @@
 ﻿namespace FastFoodWorkshop.Areas.Identity.Pages.Account
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Text.Encodings.Web;
     using System.Threading.Tasks;
@@ -12,6 +11,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
+    using FastFoodWorkshop.Constants;
 
     [AllowAnonymous]
     public class RegisterModel : PageModel
@@ -91,8 +91,19 @@
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new FastFoodUser { UserName = Input.Email, Email = Input.Email };
+                var user = new FastFoodUser
+                {
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName,
+                    UserName = Input.Username,
+                    Address = Input.Address,
+                    BirthDate = Input.DateOfBirth,
+                    Email = Input.Email,
+                };
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
+                await this._userManager.AddToRoleAsync(user, StringConstants.UserRole);
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
