@@ -1,6 +1,5 @@
 ﻿namespace FastFoodWorkshop.Areas.Identity.Pages.Account
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
@@ -12,7 +11,6 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
-    using System.Security.Claims;
 
     [AllowAnonymous]
     public class LoginModel : PageModel
@@ -38,21 +36,6 @@
 
         public class InputModel
         {
-            //[Required]
-            //[EmailAddress]
-            //[Display(Name = "Email", Prompt = "Email")]
-            //public string Email { get; set; }
-
-            //[Required]
-            //[DataType(DataType.Text)]
-            //[Display(Name = "Firstname", Prompt = "Firstname")]
-            //public string Firstname { get; set; }
-
-            //[Required]
-            //[DataType(DataType.Text)]
-            //[Display(Name = "Lastname", Prompt = "Lastname")]
-            //public string Lastname { get; set; }
-
             [Required]
             [DataType(DataType.Text)]
             [Display(Name = "Username", Prompt = "Username")]

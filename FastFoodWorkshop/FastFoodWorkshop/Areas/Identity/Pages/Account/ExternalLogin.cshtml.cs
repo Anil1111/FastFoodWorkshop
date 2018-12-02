@@ -1,9 +1,6 @@
 ﻿namespace FastFoodWorkshop.Areas.Identity.Pages.Account
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
     using System.Security.Claims;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Authorization;
@@ -13,6 +10,7 @@
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
     using Service.Contracts;
+    using Constants;
 
     [AllowAnonymous]
     public class ExternalLoginModel : PageModel
@@ -123,6 +121,7 @@
 
                 var user = new FastFoodUser { UserName = Input.Email, Email = Input.Email, FirstName = facebookData[0], LastName = facebookData[1] };
                 var result = await _userManager.CreateAsync(user);
+                await _userManager.AddToRoleAsync(user, StringConstants.UserRole);
                 if (result.Succeeded)
                 {
                     result = await _userManager.AddLoginAsync(user, info);

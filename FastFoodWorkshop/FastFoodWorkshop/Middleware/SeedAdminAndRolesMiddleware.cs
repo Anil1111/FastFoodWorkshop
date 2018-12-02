@@ -36,7 +36,10 @@
             {
                 await roleManager.CreateAsync(new IdentityRole<int>(StringConstants.EmployeeRole));
             }
-
+            if (!roleManager.RoleExistsAsync(StringConstants.UserRole).Result)
+            {
+                await roleManager.CreateAsync(new IdentityRole<int>(StringConstants.UserRole));
+            }
             var user = userManager.Users.FirstOrDefault(x => x.UserName == Configuration["AdminInfo:ManagerName"]);
 
             if (user == null)

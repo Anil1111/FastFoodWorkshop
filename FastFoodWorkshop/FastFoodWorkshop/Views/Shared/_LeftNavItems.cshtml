@@ -3,17 +3,13 @@
 @inject SignInManager<FastFoodUser> SignInManager
 @inject UserManager<FastFoodUser> UserManager
 
+
+<li class="nav-item active">
+    <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Home</a>
+</li>
 @if (SignInManager.IsSignedIn(User))
 {
-    if (User.IsInRole("Employee"))
-    {
-
-    }
-    else if (User.IsInRole("Manager"))
-    {
-
-    }
-    else
+    if (User.IsInRole("User"))
     {
         <li class="nav-item active">
             <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">My Profile</a>
@@ -21,17 +17,108 @@
         <li class="nav-item active">
             <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Propose Recipe</a>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Who are we?</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Order food</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Join Us</a>
+        </li>
+    }
+    else if (User.IsInRole("Employee"))
+    {
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">My Profile</a>
+        </li><li class="nav-item active">
+            <div class="btn-group">
+                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" style="color: #8e3904" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Orders
+                </a>
+
+                <div class="dropdown-menu bg-ffw" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Pending</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">On The Way</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Delivered</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Order food</a>
+        </li>
+    }
+    else if (User.IsInRole("Manager"))
+    {
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">My Profile</a>
+        </li>
+        <li>
+            <div class="btn-group">
+                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" style="color: #8e3904" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Restaurants
+                </a>
+
+                <div class="dropdown-menu bg-ffw" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Restaurant One</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Restaurant Two</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Restaurant Three</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Restaurant Four</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Restaurant Five</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item active">
+            <div class="btn-group">
+                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" style="color: #8e3904" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Orders
+                </a>
+
+                <div class="dropdown-menu bg-ffw" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Pending</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">On The Way</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Delivered</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item active">
+            <div class="btn-group">
+                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" style="color: #8e3904" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Products
+                </a>
+
+                <div class="dropdown-menu bg-ffw" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Vegetables</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Bakery Products</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Meat</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Sauces</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Drinks</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Recipes</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Reports</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Order food</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Applicant CV's</a>
+        </li>
     }
 }
-<li class="nav-item active">
-    <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Home</a>
-</li>
-<li class="nav-item active">
-    <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Who are we?</a>
-</li>
-<li class="nav-item active">
-    <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Order food</a>
-</li>
-<li class="nav-item active">
-    <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Join Us</a>
-</li>
+else
+{
+    <li class="nav-item active">
+        <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Who are we?</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Order food</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Join Us</a>
+    </li>
+}
