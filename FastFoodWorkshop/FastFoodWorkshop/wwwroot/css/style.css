@@ -97,3 +97,12 @@ li {
 .ffw-text-font-size {
     font-size: 25px;
 }
+
+.btn-default.custom-btn {
+    background-color: #f9ab36;
+    color: #8e3904;
+}
+
+.googleMap {
+    height:600px;
+}

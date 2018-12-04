@@ -8,12 +8,17 @@
     {
         public IActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         public IActionResult WhoAreWe()
         {
-            return View();
+            return this.View();
+        }
+
+        public IActionResult ContactsPage()
+        {
+            return this.View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
