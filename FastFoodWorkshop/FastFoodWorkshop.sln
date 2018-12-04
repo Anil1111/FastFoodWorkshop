@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastFoodWorkshop.Models", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastFoodWorkshop.Service", "FastFoodWorkshop.Service\FastFoodWorkshop.Service.csproj", "{5B8C728F-BB87-4029-B809-B6CE20F3652C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFoodWorkshop.ViewModels", "FastFoodWorkshop.ViewModels\FastFoodWorkshop.ViewModels.csproj", "{56AF9279-E869-4B91-9A94-76F56EDB62D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastFoodWorkshop.ViewModels", "FastFoodWorkshop.ViewModels\FastFoodWorkshop.ViewModels.csproj", "{56AF9279-E869-4B91-9A94-76F56EDB62D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFoodWorkshop.Mapping", "FastFoodWorkshop.Mapping\FastFoodWorkshop.Mapping.csproj", "{1DE94901-64EF-4B22-B7DD-CA164B638B69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{56AF9279-E869-4B91-9A94-76F56EDB62D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56AF9279-E869-4B91-9A94-76F56EDB62D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56AF9279-E869-4B91-9A94-76F56EDB62D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DE94901-64EF-4B22-B7DD-CA164B638B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DE94901-64EF-4B22-B7DD-CA164B638B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DE94901-64EF-4B22-B7DD-CA164B638B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DE94901-64EF-4B22-B7DD-CA164B638B69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

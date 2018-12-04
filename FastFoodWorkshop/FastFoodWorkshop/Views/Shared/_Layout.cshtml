@@ -8,18 +8,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-        @ViewData["Title"] - FastFoodWorkshop
+        FastFoodWorkshop
     </title>
     <environment include="Development">
-        <link rel="stylesheet" type="text/css" href="~/css/reset.css" />
-        <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/reset.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="~/css/style.css" media="all" />
     </environment>
 </head>
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-ffw font-weight-bold">
-            <a class="navbar-brand" style="color: #8e3904" href="#">Fast Food Workshop</a>
+            <a id="navAnchor" class="navbar-brand" href="/">Fast Food Workshop</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,11 +32,11 @@
                 </ul>
             </div>
         </nav>
-        <div class="jumbotron mt-3 ffw-jumbo-image">
-            <main>
-                @RenderBody()
-            </main>
-        </div>
+
+        <main>
+            @RenderBody()
+        </main>
+
         <footer>
             <div class="container-fluid bg-ffw">
                 <div class="text-center">

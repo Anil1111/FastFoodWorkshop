@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
@@ -19,9 +20,13 @@
 
   <ItemGroup>
     <Folder Include="Logs\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Home\WhoAreWe.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="Views\Shared\_LeftNavItems.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

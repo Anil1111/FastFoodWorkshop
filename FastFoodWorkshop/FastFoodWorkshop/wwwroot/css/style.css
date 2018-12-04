@@ -43,4 +43,57 @@ li {
     width: 48%;
 }
 
+.centeredDiv {
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 800px;
+    height: 100px;
+    background-color: green;
+}
 
+.registerDiv {
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid #f9ab36;
+    align-content: center;
+}
+
+.logindivDiv {
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid #f9ab36;
+    align-content: center;
+}
+
+.forgotPassword {
+    color: #8e3904;
+    margin-left: 298.5px;
+}
+
+#navigationAnchor.nav-link {
+    color: #8e3904;
+}
+
+#dropdownMenuLink {
+    color: #8e3904;
+}
+
+#navAnchor.navbar-brand {
+    color: #8e3904;
+}
+
+.whoAreWeImagePizza {
+    background-image: url("../images/pizza/pizza03.jpg");
+    background-size: cover;
+    height: 1200px;
+}
+
+.ffw-text-font-size {
+    font-size: 25px;
+}

@@ -1,5 +1,6 @@
 ﻿namespace FastFoodWorkshop
 {
+    using AutoMapper;
     using Data;
     using Service;
     using Service.Contracts;
@@ -58,6 +59,9 @@
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddAutoMapper();
+
+
             //App services
             services.AddScoped<RoleManager<IdentityRole<int>>>();
             services.AddScoped<IUserService, UserService>();
@@ -89,7 +93,7 @@
             app.UseAuthentication();
 
             app.UseMvc(routes =>
-            {
+            { 
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

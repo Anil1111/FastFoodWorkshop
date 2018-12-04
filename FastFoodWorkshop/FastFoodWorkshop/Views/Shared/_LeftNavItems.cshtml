@@ -12,28 +12,37 @@
     if (User.IsInRole("User"))
     {
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">My Profile</a>
+            <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="Index">My Profile</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Propose Recipe</a>
+            <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="Index">Propose Recipe</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Who are we?</a>
+            <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="WhoAreWe">Who are we?</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Order food</a>
+            <div class="btn-group">
+                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Order Food
+                </a>
+
+                <div class="dropdown-menu bg-ffw" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Our Menus</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Create Menu</a>
+                </div>
+            </div>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Join Us</a>
+            <a style="color: #8e3904" class="nav-link" asp-controller="Home" asp-action="Index">Join Us</a>
         </li>
     }
     else if (User.IsInRole("Employee"))
     {
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">My Profile</a>
+            <a class="nav-link" asp-controller="Home" asp-action="Index">My Profile</a>
         </li><li class="nav-item active">
             <div class="btn-group">
-                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" style="color: #8e3904" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Orders
                 </a>
 
@@ -45,17 +54,26 @@
             </div>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Order food</a>
+            <div class="btn-group">
+                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Order Food
+                </a>
+
+                <div class="dropdown-menu bg-ffw" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Our Menus</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Create Menu</a>
+                </div>
+            </div>
         </li>
     }
     else if (User.IsInRole("Manager"))
     {
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">My Profile</a>
+            <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="Index">My Profile</a>
         </li>
         <li>
             <div class="btn-group">
-                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" style="color: #8e3904" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Restaurants
                 </a>
 
@@ -70,7 +88,7 @@
         </li>
         <li class="nav-item active">
             <div class="btn-group">
-                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" style="color: #8e3904" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Orders
                 </a>
 
@@ -83,7 +101,7 @@
         </li>
         <li class="nav-item active">
             <div class="btn-group">
-                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" style="color: #8e3904" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Products
                 </a>
 
@@ -97,28 +115,46 @@
             </div>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Recipes</a>
+            <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="Index">Recipes</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Reports</a>
+            <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="Index">Reports</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Order food</a>
+            <div class="btn-group">
+                <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Order Food
+                </a>
+
+                <div class="dropdown-menu bg-ffw" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Our Menus</a>
+                    <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Create Menu</a>
+                </div>
+            </div>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Applicant CV's</a>
+            <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="Index">Applicant CV's</a>
         </li>
     }
 }
 else
 {
     <li class="nav-item active">
-        <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Who are we?</a>
+        <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="WhoAreWe">Who are we?</a>
+    </li>
+    <li>
+        <div class="btn-group">
+            <a class="btn btn-link nav-link ffw-text-brown button-size font-weight-bold border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Order Food
+            </a>
+
+            <div class="dropdown-menu bg-ffw" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Our Menus</a>
+                <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Create Menu</a>
+            </div>
+        </div>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Order food</a>
-    </li>
-    <li class="nav-item active">
-        <a class="nav-link" style="color: #8e3904" asp-controller="Home" asp-action="Index">Join Us</a>
+        <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="Index">Join Us</a>
     </li>
 }
