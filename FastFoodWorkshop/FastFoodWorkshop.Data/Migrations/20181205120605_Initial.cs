@@ -35,7 +35,7 @@ namespace FastFoodWorkshop.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Address = table.Column<string>(maxLength: 100, nullable: false)
+                    Address = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -133,9 +133,9 @@ namespace FastFoodWorkshop.Data.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    FirstName = table.Column<string>(maxLength: 50, nullable: false),
-                    LastName = table.Column<string>(maxLength: 50, nullable: false),
-                    Address = table.Column<string>(maxLength: 100, nullable: true),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true),
                     BirthDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -163,13 +163,13 @@ namespace FastFoodWorkshop.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Username = table.Column<string>(maxLength: 50, nullable: false),
-                    FirstName = table.Column<string>(maxLength: 50, nullable: false),
-                    LastName = table.Column<string>(maxLength: 50, nullable: false),
+                    Username = table.Column<string>(nullable: true),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
                     Age = table.Column<int>(nullable: false),
                     Position = table.Column<int>(nullable: false),
-                    Email = table.Column<string>(maxLength: 60, nullable: false),
-                    Address = table.Column<string>(maxLength: 100, nullable: false),
+                    Email = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true),
                     Salary = table.Column<decimal>(nullable: false),
                     RestaurantId = table.Column<int>(nullable: true)
                 },
@@ -191,7 +191,7 @@ namespace FastFoodWorkshop.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     FastFoodUserId = table.Column<int>(nullable: false),
-                    RecipeDescription = table.Column<string>(maxLength: 30000, nullable: false),
+                    RecipeDescription = table.Column<string>(nullable: true),
                     VideoTutorial = table.Column<byte[]>(nullable: true)
                 },
                 constraints: table =>
@@ -211,13 +211,13 @@ namespace FastFoodWorkshop.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ApplicantFirstName = table.Column<string>(maxLength: 50, nullable: false),
-                    ApplicantLastName = table.Column<string>(maxLength: 50, nullable: false),
+                    ApplicantFirstName = table.Column<string>(nullable: true),
+                    ApplicantLastName = table.Column<string>(nullable: true),
                     Picture = table.Column<byte[]>(nullable: true),
                     Birthdate = table.Column<DateTime>(nullable: false),
-                    MotivationalLetter = table.Column<string>(maxLength: 2500, nullable: false),
-                    PhoneNumber = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(maxLength: 60, nullable: false),
+                    MotivationalLetter = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
                     IsHired = table.Column<bool>(nullable: false),
                     EmployeeId = table.Column<int>(nullable: false)
                 },
@@ -241,7 +241,7 @@ namespace FastFoodWorkshop.Data.Migrations
                     FastFoodUserId = table.Column<int>(nullable: false),
                     EmployeeId = table.Column<int>(nullable: false),
                     RestaurantId = table.Column<int>(nullable: false),
-                    Description = table.Column<string>(maxLength: 2500, nullable: false),
+                    Description = table.Column<string>(nullable: true),
                     DateOfComplaint = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -273,7 +273,7 @@ namespace FastFoodWorkshop.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Model = table.Column<string>(maxLength: 25, nullable: false),
+                    Model = table.Column<string>(nullable: true),
                     Mileage = table.Column<double>(nullable: false),
                     ProductionDate = table.Column<DateTime>(nullable: false),
                     TankCapacity = table.Column<double>(nullable: false),
@@ -344,7 +344,7 @@ namespace FastFoodWorkshop.Data.Migrations
                     StartDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: false),
                     Salary = table.Column<decimal>(nullable: false),
-                    JobDescription = table.Column<string>(maxLength: 2500, nullable: false),
+                    JobDescription = table.Column<string>(nullable: true),
                     ApplicantCVId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -366,7 +366,7 @@ namespace FastFoodWorkshop.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     StartYear = table.Column<DateTime>(nullable: false),
                     EndYear = table.Column<DateTime>(nullable: true),
-                    OrganizationName = table.Column<string>(maxLength: 50, nullable: false),
+                    OrganizationName = table.Column<string>(nullable: true),
                     ApplicantCVId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -386,7 +386,7 @@ namespace FastFoodWorkshop.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    Name = table.Column<string>(nullable: true),
                     OrderId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -406,7 +406,7 @@ namespace FastFoodWorkshop.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(maxLength: 60, nullable: false),
+                    Name = table.Column<string>(nullable: true),
                     ProteinsQuantity = table.Column<double>(nullable: false),
                     CarbohidratesQuantity = table.Column<double>(nullable: false),
                     FatQuantity = table.Column<double>(nullable: false),

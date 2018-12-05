@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FastFoodWorkshop.Data.Migrations
 {
     [DbContext(typeof(FastFoodWorkshopDbContext))]
-    [Migration("20181201190457_Initial")]
+    [Migration("20181205120605_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,30 +27,21 @@ namespace FastFoodWorkshop.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ApplicantFirstName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("ApplicantFirstName");
 
-                    b.Property<string>("ApplicantLastName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("ApplicantLastName");
 
                     b.Property<DateTime>("Birthdate");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(60);
+                    b.Property<string>("Email");
 
                     b.Property<int>("EmployeeId");
 
                     b.Property<bool>("IsHired");
 
-                    b.Property<string>("MotivationalLetter")
-                        .IsRequired()
-                        .HasMaxLength(2500);
+                    b.Property<string>("MotivationalLetter");
 
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired();
+                    b.Property<string>("PhoneNumber");
 
                     b.Property<byte[]>("Picture");
 
@@ -70,9 +61,7 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<DateTime>("DateOfComplaint");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(2500);
+                    b.Property<string>("Description");
 
                     b.Property<int>("EmployeeId");
 
@@ -107,9 +96,7 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<double>("MilesTravelledPerDay");
 
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasMaxLength(25);
+                    b.Property<string>("Model");
 
                     b.Property<DateTime>("ProductionDate");
 
@@ -138,9 +125,7 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<DateTime?>("EndYear");
 
-                    b.Property<string>("OrganizationName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("OrganizationName");
 
                     b.Property<DateTime>("StartYear");
 
@@ -157,23 +142,15 @@ namespace FastFoodWorkshop.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<string>("Address");
 
                     b.Property<int>("Age");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(60);
+                    b.Property<string>("Email");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("FirstName");
 
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("LastName");
 
                     b.Property<int>("Position");
 
@@ -181,9 +158,7 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<decimal>("Salary");
 
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("Username");
 
                     b.HasKey("Id");
 
@@ -200,8 +175,7 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
-                    b.Property<string>("Address")
-                        .HasMaxLength(100);
+                    b.Property<string>("Address");
 
                     b.Property<DateTime>("BirthDate");
 
@@ -211,13 +185,9 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("FirstName");
 
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("LastName");
 
                     b.Property<bool>("LockoutEnabled");
 
@@ -254,9 +224,7 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<DateTime>("EndDate");
 
-                    b.Property<string>("JobDescription")
-                        .IsRequired()
-                        .HasMaxLength(2500);
+                    b.Property<string>("JobDescription");
 
                     b.Property<decimal>("Salary");
 
@@ -275,9 +243,7 @@ namespace FastFoodWorkshop.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("Name");
 
                     b.Property<int>("OrderId");
 
@@ -327,9 +293,7 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<int?>("MenuId");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(60);
+                    b.Property<string>("Name");
 
                     b.Property<byte[]>("Picture");
 
@@ -352,9 +316,7 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<int>("FastFoodUserId");
 
-                    b.Property<string>("RecipeDescription")
-                        .IsRequired()
-                        .HasMaxLength(30000);
+                    b.Property<string>("RecipeDescription");
 
                     b.Property<byte[]>("VideoTutorial");
 
@@ -371,9 +333,7 @@ namespace FastFoodWorkshop.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<string>("Address");
 
                     b.HasKey("Id");
 

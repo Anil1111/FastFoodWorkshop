@@ -1,4 +1,8 @@
-namespace FastFoodWorkshop.ViewModels
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace FastFoodWorkshop.ServiceModels.ViewModels
 {
     public class ErrorViewModel
     {

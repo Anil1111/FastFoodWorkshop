@@ -6,7 +6,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FastFoodWorkshop.Data\FastFoodWorkshop.Data.csproj" />
-    <ProjectReference Include="..\FastFoodWorkshop.ViewModels\FastFoodWorkshop.ViewModels.csproj" />
+    <ProjectReference Include="..\FastFoodWorkshop.Mapping\FastFoodWorkshop.Mapping.csproj" />
+    <ProjectReference Include="..\FastFoodWorkshop.ServiceModels\FastFoodWorkshop.ServiceModels.csproj" />
   </ItemGroup>
 
 </Project>

@@ -14,8 +14,6 @@
 
         public decimal Salary { get; set; }
 
-        [Required]
-        [StringLength(2500, MinimumLength = 50)]
         public string JobDescription { get; set; }
 
         public int ApplicantCVId { get; set; }

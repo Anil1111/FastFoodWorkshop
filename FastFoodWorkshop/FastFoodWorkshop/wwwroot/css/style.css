@@ -55,20 +55,13 @@ li {
     background-color: green;
 }
 
-.registerDiv {
+.formDiv {
     background-color: white;
     padding: 20px;
     border-radius: 25px;
     border: 2px solid #f9ab36;
     align-content: center;
-}
-
-.logindivDiv {
-    background-color: white;
-    padding: 20px;
-    border-radius: 25px;
-    border: 2px solid #f9ab36;
-    align-content: center;
+    margin-top:20px;
 }
 
 .forgotPassword {
@@ -104,5 +97,13 @@ li {
 }
 
 .googleMap {
-    height:600px;
+    height:800px;
+}
+
+.sandwichPic {
+    background-image: url("../images/pizza/pizza00.jpg");
+}
+
+.titleMargin {
+    margin-top:7px;
 }

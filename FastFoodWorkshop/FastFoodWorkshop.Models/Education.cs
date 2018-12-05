@@ -12,8 +12,6 @@
 
         public DateTime? EndYear { get; set; }
 
-        [Required]
-        [StringLength(50)]
         public string OrganizationName { get; set; }
 
         public int ApplicantCVId { get; set; }
