@@ -13,7 +13,7 @@
         {
         }
 
-        public DbSet<ApplicantCV> ApllicantsCVs { get; set; }
+        public DbSet<ApplicantCV> ApplicantsCVs { get; set; }
         public DbSet<Complaint> Complaints { get; set; }
         public DbSet<DeliveryCar> DeliveryCars { get; set; }
         public DbSet<Education> Schools { get; set; }

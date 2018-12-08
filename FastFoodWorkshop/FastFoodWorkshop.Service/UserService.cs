@@ -7,6 +7,7 @@
 
     public class UserService : IUserService
     {
+        
         public FastFoodUser CreateManager(
             string firstName,
             string lastName,

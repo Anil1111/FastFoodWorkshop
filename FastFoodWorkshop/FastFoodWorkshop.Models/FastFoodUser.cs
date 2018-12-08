@@ -3,7 +3,6 @@
     using Microsoft.AspNetCore.Identity;
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
 
     public class FastFoodUser : IdentityUser<int>
     {
@@ -22,7 +21,7 @@
 
         public DateTime BirthDate { get; set; }
 
-        public int Age => DateTime.Now.Year - BirthDate.Year;
+        public int Age => DateTime.UtcNow.Year - BirthDate.Year;
 
         public virtual ICollection<Recipe> Recepies { get; set; }
 

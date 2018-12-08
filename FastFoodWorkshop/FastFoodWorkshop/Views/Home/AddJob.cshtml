@@ -1,0 +1,41 @@
+﻿@model FastFoodWorkshop.ServiceModels.Home.JobInputModel
+@{
+    ViewData["Title"] = "Add Job";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="ffw-text-brown text-center titleMargin">@ViewData["Title"]</h2>
+<div class="formDiv">
+    <div class="w-50 mx-auto mt-4">
+        <form method="post">
+            <div class="d-flex justify-content-between">
+                <div class="form-group width-size">
+                    <label asp-for="StartDate" class="ffw-text-brown">Start Date</label>
+                    <input type="date" asp-for="StartDate" class="form-control" placeholder="Start Date" />
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group width-size">
+                    <label asp-for="EndDate" class="ffw-text-brown">End Date</label>
+                    <input type="date" asp-for="EndDate" class="form-control" placeholder="End Date" />
+                    <span asp-validation-for="EndDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="align-self-center">
+                <div class="form-group">
+                    <label asp-for="Salary" class="ffw-text-brown">Salary</label>
+                    <input asp-for="Salary" class="form-control" placeholder="Email" />
+                    <span asp-validation-for="Salary" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="align-self-center">
+                <div class="form-group">
+                    <label asp-for="JobDescription" class="ffw-text-brown">Job Description</label>
+                    <textarea asp-for="JobDescription" class="form-control" placeholder="Job Description"></textarea>
+                    <span asp-validation-for="JobDescription" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-4">
+                <button type="submit" class="btn btn-default custom-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

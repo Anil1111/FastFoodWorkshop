@@ -206,7 +206,7 @@ namespace FastFoodWorkshop.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ApllicantsCVs",
+                name: "ApplicantsCVs",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -219,13 +219,13 @@ namespace FastFoodWorkshop.Data.Migrations
                     PhoneNumber = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     IsHired = table.Column<bool>(nullable: false),
-                    EmployeeId = table.Column<int>(nullable: false)
+                    EmployeeId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ApllicantsCVs", x => x.Id);
+                    table.PrimaryKey("PK_ApplicantsCVs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ApllicantsCVs_Employees_EmployeeId",
+                        name: "FK_ApplicantsCVs_Employees_EmployeeId",
                         column: x => x.EmployeeId,
                         principalTable: "Employees",
                         principalColumn: "Id",
@@ -351,9 +351,9 @@ namespace FastFoodWorkshop.Data.Migrations
                 {
                     table.PrimaryKey("PK_Jobs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Jobs_ApllicantsCVs_ApplicantCVId",
+                        name: "FK_Jobs_ApplicantsCVs_ApplicantCVId",
                         column: x => x.ApplicantCVId,
-                        principalTable: "ApllicantsCVs",
+                        principalTable: "ApplicantsCVs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -373,9 +373,9 @@ namespace FastFoodWorkshop.Data.Migrations
                 {
                     table.PrimaryKey("PK_Schools", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Schools_ApllicantsCVs_ApplicantCVId",
+                        name: "FK_Schools_ApplicantsCVs_ApplicantCVId",
                         column: x => x.ApplicantCVId,
-                        principalTable: "ApllicantsCVs",
+                        principalTable: "ApplicantsCVs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -426,10 +426,11 @@ namespace FastFoodWorkshop.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApllicantsCVs_EmployeeId",
-                table: "ApllicantsCVs",
+                name: "IX_ApplicantsCVs_EmployeeId",
+                table: "ApplicantsCVs",
                 column: "EmployeeId",
-                unique: true);
+                unique: true,
+                filter: "[EmployeeId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Complaints_EmployeeId",
@@ -546,7 +547,7 @@ namespace FastFoodWorkshop.Data.Migrations
                 name: "Menus");
 
             migrationBuilder.DropTable(
-                name: "ApllicantsCVs");
+                name: "ApplicantsCVs");
 
             migrationBuilder.DropTable(
                 name: "Orders");

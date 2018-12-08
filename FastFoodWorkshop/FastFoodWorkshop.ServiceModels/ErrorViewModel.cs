@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FastFoodWorkshop.ServiceModels.ViewModels
+namespace FastFoodWorkshop.ServiceModels
 {
     public class ErrorViewModel
     {

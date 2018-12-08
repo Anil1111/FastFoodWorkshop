@@ -21,7 +21,7 @@
             builder.HasOne(e => e.ApplicantCV)
                 .WithOne(e => e.Employee)
                 .HasForeignKey<ApplicantCV>(e => e.EmployeeId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.ClientSetNull);
 
             builder.HasMany(e => e.Complaints)
                 .WithOne(e => e.Employee)

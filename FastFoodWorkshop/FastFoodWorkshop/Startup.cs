@@ -4,11 +4,11 @@
     using Data;
     using Service;
     using Service.Contracts;
+    using ServiceModels.Home;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Identity;
-    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
@@ -37,7 +37,8 @@
             });
 
             services.AddDbContext<FastFoodWorkshopDbContext>(options =>
-                options.UseSqlServer(
+                options.UseLazyLoadingProxies().
+                UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<FastFoodUser, IdentityRole<int>>()
                 .AddDefaultUI()
@@ -59,13 +60,20 @@
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddAutoMapper();
+            services.AddAutoMapper(config =>
+                {
+                    config.CreateMap<ApplicantCvInputModel, ApplicantCV>()
+                    .ForMember(dest => dest.Picture, opt => opt.Ignore());
+                    config.CreateMap<JobInputModel, Job>();
+                    config.CreateMap<EducationInputModel, Education>();
+                });
 
 
             //App services
             services.AddScoped<RoleManager<IdentityRole<int>>>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IFacebookService, FacebookService>();
+            services.AddScoped<IHomeService, HomeService>();
             services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
             services.AddTransient<SeedAdminAndRolesMiddleware>();
         }

@@ -24,7 +24,7 @@
 
         public DateTime Birthdate { get; set; }
 
-        public int Age => DateTime.Now.Year - Birthdate.Year;
+        public int Age => DateTime.UtcNow.Year - Birthdate.Year;
 
         public string MotivationalLetter { get; set; }
 
@@ -34,7 +34,7 @@
 
         public bool IsHired { get; set; }
 
-        public int EmployeeId { get; set; }
+        public int? EmployeeId { get; set; }
         public virtual Employee Employee { get; set; }
 
         public virtual ICollection<Job> PreviousJobs { get; set; }

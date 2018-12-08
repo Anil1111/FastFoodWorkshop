@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FastFoodWorkshop.Data.Migrations
 {
     [DbContext(typeof(FastFoodWorkshopDbContext))]
-    [Migration("20181205120605_Initial")]
+    [Migration("20181208162234_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,7 +35,7 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<string>("Email");
 
-                    b.Property<int>("EmployeeId");
+                    b.Property<int?>("EmployeeId");
 
                     b.Property<bool>("IsHired");
 
@@ -48,9 +48,10 @@ namespace FastFoodWorkshop.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("EmployeeId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[EmployeeId] IS NOT NULL");
 
-                    b.ToTable("ApllicantsCVs");
+                    b.ToTable("ApplicantsCVs");
                 });
 
             modelBuilder.Entity("FastFoodWorkshop.Models.Complaint", b =>
@@ -436,8 +437,7 @@ namespace FastFoodWorkshop.Data.Migrations
                 {
                     b.HasOne("FastFoodWorkshop.Models.Employee", "Employee")
                         .WithOne("ApplicantCV")
-                        .HasForeignKey("FastFoodWorkshop.Models.ApplicantCV", "EmployeeId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("FastFoodWorkshop.Models.ApplicantCV", "EmployeeId");
                 });
 
             modelBuilder.Entity("FastFoodWorkshop.Models.Complaint", b =>

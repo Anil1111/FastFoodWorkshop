@@ -1,6 +1,9 @@
-﻿namespace FastFoodWorkshop.ServiceModels.InputModels.User
+﻿namespace FastFoodWorkshop.ServiceModels.Home
 {
+    using Microsoft.AspNetCore.Http;
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     public class ApplicantCvInputModel
@@ -15,11 +18,10 @@
         [StringLength(50)]
         public string ApplicantLastName { get; set; }
 
-        [Required]
-        [DataType(DataType.Upload)]
-        public byte[] Picture { get; set; }
+        public IFormFile Picture { get; set; }
 
         [Required]
+        [DisplayFormat(DataFormatString = "{dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.DateTime)]
         public DateTime BirthDate { get; set; }
 
@@ -38,5 +40,9 @@
         [StringLength(60, MinimumLength = 5)]
         public string Email { get; set; }
 
+
+        public virtual ICollection<JobInputModel> Job { get; set; }
+
+        public virtual ICollection<EducationInputModel> Education { get; set; }
     }
 }
