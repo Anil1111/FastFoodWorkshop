@@ -25,7 +25,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\Home\JoinUs.cshtml">
+    <Content Update="Views\Applicant\AddEducation.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Applicant\AddJob.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Applicant\ApplicantSuccess.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Applicant\EducationSuccess.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Applicant\JobSuccess.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Applicant\JoinUs.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="Views\Home\WhoAreWe.cshtml">

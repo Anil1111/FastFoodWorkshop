@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FastFoodWorkshop.Data.Migrations
 {
     [DbContext(typeof(FastFoodWorkshopDbContext))]
-    [Migration("20181208162234_Initial")]
+    [Migration("20181208203020_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,6 +26,8 @@ namespace FastFoodWorkshop.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address");
 
                     b.Property<string>("ApplicantFirstName");
 

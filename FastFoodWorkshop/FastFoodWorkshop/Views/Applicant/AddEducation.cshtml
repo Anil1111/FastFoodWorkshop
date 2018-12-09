@@ -1,4 +1,4 @@
-﻿@model FastFoodWorkshop.ServiceModels.Home.EducationInputModel
+﻿@model FastFoodWorkshop.ServiceModels.Applicant.EducationInputModel
 @{
     ViewData["Title"] = "Add Education";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,7 +6,7 @@
 <h2 class="ffw-text-brown text-center titleMargin">@ViewData["Title"]</h2>
 <div class="formDiv">
     <div class="w-50 mx-auto mt-4">
-        <form method="post">
+        <form method="post" asp-controller="Applicant" asp-action="AddEducation">
             <div class="d-flex justify-content-between">
                 <div class="form-group width-size">
                     <label asp-for="StartYear" class="ffw-text-brown">Start Year</label>
@@ -26,8 +26,13 @@
                     <span asp-validation-for="OrganizationName" class="text-danger"></span>
                 </div>
             </div>
-            <div class="d-flex justify-content-center mt-4">
-                <button type="submit" class="btn btn-default custom-btn">Submit</button>
+            <div class="d-flex justify-content-between">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default custom-btn">Add Education</button>
+                </div>
+                <div class="form-group">
+                    <a class="btn btn-default custom-btn" asp-controller="Applicant" asp-action="ApplicantSuccess">Finish</a>
+                </div>
             </div>
         </form>
     </div>

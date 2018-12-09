@@ -1,4 +1,4 @@
-﻿namespace FastFoodWorkshop.ServiceModels.Home
+﻿namespace FastFoodWorkshop.ServiceModels.Applicant
 {
     using System;
     using System.ComponentModel.DataAnnotations;

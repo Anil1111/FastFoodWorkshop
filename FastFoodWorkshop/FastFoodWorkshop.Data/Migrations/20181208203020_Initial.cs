@@ -216,6 +216,7 @@ namespace FastFoodWorkshop.Data.Migrations
                     Picture = table.Column<byte[]>(nullable: true),
                     Birthdate = table.Column<DateTime>(nullable: false),
                     MotivationalLetter = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     IsHired = table.Column<bool>(nullable: false),

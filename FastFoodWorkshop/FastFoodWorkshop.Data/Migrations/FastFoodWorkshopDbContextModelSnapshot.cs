@@ -25,6 +25,8 @@ namespace FastFoodWorkshop.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Address");
+
                     b.Property<string>("ApplicantFirstName");
 
                     b.Property<string>("ApplicantLastName");

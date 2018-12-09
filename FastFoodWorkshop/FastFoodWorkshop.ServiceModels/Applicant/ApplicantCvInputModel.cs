@@ -1,4 +1,4 @@
-﻿namespace FastFoodWorkshop.ServiceModels.Home
+﻿namespace FastFoodWorkshop.ServiceModels.Applicant
 {
     using Microsoft.AspNetCore.Http;
     using System;
@@ -29,6 +29,11 @@
         [DataType(DataType.Text)]
         [StringLength(2500, MinimumLength = 50)]
         public string MotivationalLetter { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [StringLength(150, MinimumLength = 10)]
+        public string Address { get; set; }
 
         [Required]
         [DataType(DataType.Text)]

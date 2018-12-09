@@ -4,7 +4,7 @@
     using Data;
     using Service;
     using Service.Contracts;
-    using ServiceModels.Home;
+    using ServiceModels.Applicant;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -73,7 +73,7 @@
             services.AddScoped<RoleManager<IdentityRole<int>>>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IFacebookService, FacebookService>();
-            services.AddScoped<IHomeService, HomeService>();
+            services.AddScoped<IApplicantService, ApplicantService>();
             services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
             services.AddTransient<SeedAdminAndRolesMiddleware>();
         }

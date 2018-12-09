@@ -1,8 +1,8 @@
 footer {
     position: fixed;
+    left: 0;
     bottom: 0;
-    border: 0;
-    width: 98%;
+    width: 100%;
 }
 
 .bg-ffw {
@@ -61,7 +61,7 @@ li {
     border-radius: 25px;
     border: 2px solid #f9ab36;
     align-content: center;
-    margin-top:20px;
+    margin-top: 20px;
 }
 
 .forgotPassword {
@@ -107,3 +107,9 @@ li {
 .titleMargin {
     margin-top:7px;
 }
+
+p.successMsg {
+    color: #8e3904;
+    font-size: 17px;
+}
+
