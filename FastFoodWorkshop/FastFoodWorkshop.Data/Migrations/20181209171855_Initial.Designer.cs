@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FastFoodWorkshop.Data.Migrations
 {
     [DbContext(typeof(FastFoodWorkshopDbContext))]
-    [Migration("20181208203020_Initial")]
+    [Migration("20181209171855_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -126,11 +126,11 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<int>("ApplicantCVId");
 
-                    b.Property<DateTime?>("EndYear");
+                    b.Property<DateTime?>("EndDate");
 
                     b.Property<string>("OrganizationName");
 
-                    b.Property<DateTime>("StartYear");
+                    b.Property<DateTime>("StartDate");
 
                     b.HasKey("Id");
 

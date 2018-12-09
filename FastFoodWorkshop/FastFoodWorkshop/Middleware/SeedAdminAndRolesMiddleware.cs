@@ -1,6 +1,6 @@
 ﻿namespace FastFoodWorkshop.Middleware
 {
-    using Constants;
+    using Common;
     using Models;
     using Microsoft.AspNetCore.Identity;
     using System.Linq;
@@ -28,32 +28,32 @@
             IUserService userService)
         {
 
-            if(!roleManager.RoleExistsAsync(StringConstants.ManagerRole).Result)
+            if(!roleManager.RoleExistsAsync(CommonStrings.ManagerRole).Result)
             {
-                await roleManager.CreateAsync(new IdentityRole<int>(StringConstants.ManagerRole));
+                await roleManager.CreateAsync(new IdentityRole<int>(CommonStrings.ManagerRole));
             }
-            if (!roleManager.RoleExistsAsync(StringConstants.EmployeeRole).Result)
+            if (!roleManager.RoleExistsAsync(CommonStrings.EmployeeRole).Result)
             {
-                await roleManager.CreateAsync(new IdentityRole<int>(StringConstants.EmployeeRole));
+                await roleManager.CreateAsync(new IdentityRole<int>(CommonStrings.EmployeeRole));
             }
-            if (!roleManager.RoleExistsAsync(StringConstants.UserRole).Result)
+            if (!roleManager.RoleExistsAsync(CommonStrings.UserRole).Result)
             {
-                await roleManager.CreateAsync(new IdentityRole<int>(StringConstants.UserRole));
+                await roleManager.CreateAsync(new IdentityRole<int>(CommonStrings.UserRole));
             }
-            var user = userManager.Users.FirstOrDefault(x => x.UserName == Configuration["AdminInfo:ManagerName"]);
+            var user = userManager.Users.FirstOrDefault(x => x.UserName == Configuration[Security.AdminInfoManagerName]);
 
             if (user == null)
             {
                 user = userService.CreateManager(
-                      Configuration["AdminInfo:ManagerFirstName"],
-                      Configuration["AdminInfo:ManagerLastName"],
-                      Configuration["AdminInfo:ManagerName"],
-                      Configuration["AdminInfo:ManagerBirthDate"],
-                      Configuration["AdminInfo:ManagerAddress"],
-                      Configuration["AdminInfo:ManagerEmail"]);
+                      Configuration[Security.AdminInfoManagerFirstName],
+                      Configuration[Security.AdminInfoManagerLastName],
+                      Configuration[Security.AdminInfoManagerName],
+                      Configuration[Security.AdminInfoManagerBirthDate],
+                      Configuration[Security.AdminInfoManagerAddress],
+                      Configuration[Security.AdminInfoManagerEmail]);
 
-                await userManager.CreateAsync(user, Configuration["AdminInfo:ManagerPassword"]);
-                await userManager.AddToRoleAsync(user, StringConstants.ManagerRole);
+                await userManager.CreateAsync(user, Configuration[Security.AdminInfoManagerPassword]);
+                await userManager.AddToRoleAsync(user, CommonStrings.ManagerRole);
             }
 
             await this.next(context);

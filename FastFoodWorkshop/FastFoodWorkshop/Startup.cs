@@ -1,6 +1,7 @@
 ﻿namespace FastFoodWorkshop
 {
     using AutoMapper;
+    using Common;
     using Data;
     using Service;
     using Service.Contracts;
@@ -48,8 +49,8 @@
             services.AddAuthentication()
                 .AddFacebook(facebook =>
                 {
-                    facebook.AppId = Configuration["Authentication:Facebook:AppId"];
-                    facebook.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+                    facebook.AppId = Configuration[Security.FacebookAppId];
+                    facebook.AppSecret = Configuration[Security.FacebookSecret];
                 });
 
             services.ConfigureApplicationCookie(options =>
@@ -79,9 +80,9 @@
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory logger)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            logger.AddFile("Log.txt");
+            loggerFactory.AddFile("Logs/Log.txt");
 
             if (env.IsDevelopment())
             {
@@ -94,6 +95,7 @@
                 app.UseHsts();
             }
 
+            app.UseStatusCodePages();
             app.UseSeedAdminAndRoles();
             app.UseHttpsRedirection();
             app.UseStaticFiles();

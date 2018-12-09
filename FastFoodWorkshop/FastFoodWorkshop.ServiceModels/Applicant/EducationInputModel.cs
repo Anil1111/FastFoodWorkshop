@@ -1,5 +1,7 @@
 ﻿namespace FastFoodWorkshop.ServiceModels.Applicant
 {
+    using Common.CustomValidations;
+    using Common;
     using System;
     using System.ComponentModel.DataAnnotations;
 
@@ -7,10 +9,13 @@
     {
         [Required]
         [DataType(DataType.DateTime)]
-        public DateTime StartYear { get; set; }
+        [DateRestrictToday(ErrorMessage = ErrorMessages.DateCannotBeAfterToday)]
+        public DateTime StartDate { get; set; }
 
         [DataType(DataType.DateTime)]
-        public DateTime? EndYear { get; set; }
+        [AttributeGreaterThan(CommonStrings.StartDate)]
+        [DateRestrictToday(ErrorMessage = ErrorMessages.DateCannotBeAfterToday)]
+        public DateTime? EndDate { get; set; }
 
         [Required]
         public string OrganizationName { get; set; }

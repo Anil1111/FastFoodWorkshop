@@ -14,4 +14,8 @@
     <Folder Include="User\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FastFoodWorkshop.Common\FastFoodWorkshop.Common.csproj" />
+  </ItemGroup>
+
 </Project>

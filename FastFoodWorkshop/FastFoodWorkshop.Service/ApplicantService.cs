@@ -49,14 +49,12 @@
         public async Task<int> AddApplicantJob(JobInputModel inputModel)
         {
             var currentApplicant = this.applicantRepository.All().LastOrDefault();
-
-            if (currentApplicant == null)
-            {
-                return 0;
-            }
-
             var job = this.mapper.Map<Job>(inputModel);
-            job.ApplicantCVId = currentApplicant.Id;
+
+            if (currentApplicant != null)
+            {
+                job.ApplicantCVId = currentApplicant.Id;
+            }
 
             await this.jobRepository.AddAsync(job);
 
@@ -66,14 +64,12 @@
         public async Task<int> AddApplicantEducation(EducationInputModel inputModel)
         {
             var currentApplicant = this.applicantRepository.All().LastOrDefault();
-
-            if (currentApplicant == null)
-            {
-                return 0;
-            }
-
             var education = this.mapper.Map<Education>(inputModel);
-            education.ApplicantCVId = currentApplicant.Id;
+
+            if (currentApplicant != null)
+            {
+                education.ApplicantCVId = currentApplicant.Id;
+            }
 
             await this.educationRepository.AddAsync(education);
 

@@ -8,9 +8,9 @@
         [Key]
         public int Id { get; set; }
 
-        public DateTime StartYear { get; set; }
+        public DateTime StartDate { get; set; }
 
-        public DateTime? EndYear { get; set; }
+        public DateTime? EndDate { get; set; }
 
         public string OrganizationName { get; set; }
 

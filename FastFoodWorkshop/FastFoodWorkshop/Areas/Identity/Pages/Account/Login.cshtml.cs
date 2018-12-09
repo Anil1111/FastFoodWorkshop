@@ -1,5 +1,6 @@
 ﻿namespace FastFoodWorkshop.Areas.Identity.Pages.Account
 {
+    using Common;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
@@ -38,15 +39,15 @@
         {
             [Required]
             [DataType(DataType.Text)]
-            [Display(Name = "Username", Prompt = "Username")]
+            [Display(Name = CommonStrings.UserName, Prompt = CommonStrings.UserName)]
             public string Username { get; set; }
 
             [Required]
             [DataType(DataType.Password)]
-            [Display(Name = "Password", Prompt = "Password")]
+            [Display(Name = CommonStrings.Password, Prompt = CommonStrings.Password)]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = CommonStrings.RememberMe)]
             public bool RememberMe { get; set; }
         }
 

@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FastFoodWorkshop.Common\FastFoodWorkshop.Common.csproj" />
     <ProjectReference Include="..\FastFoodWorkshop.Data\FastFoodWorkshop.Data.csproj" />
     <ProjectReference Include="..\FastFoodWorkshop.ServiceModels\FastFoodWorkshop.ServiceModels.csproj" />
   </ItemGroup>

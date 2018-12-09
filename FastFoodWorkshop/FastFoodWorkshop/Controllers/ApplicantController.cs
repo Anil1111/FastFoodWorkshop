@@ -1,15 +1,16 @@
 ﻿namespace FastFoodWorkshop.Controllers
 {
     using AutoMapper;
+    using Common;
     using Service.Contracts;
     using ServiceModels.Applicant;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
+    using System;
 
     public class ApplicantController : BaseController
     {
-
         private readonly IApplicantService applicantService;
         private readonly IMapper mapper;
 
@@ -33,11 +34,18 @@
         {
             if (ModelState.IsValid)
             {
-                await this.applicantService.AddApplicantCv(inputModel);
-                return this.Redirect("AddJob");
+                try
+                {
+                    await this.applicantService.AddApplicantCv(inputModel);
+                    return this.Redirect(ViewNames.AddJob);
+                }
+                catch (Exception)
+                {
+                    return StatusCode(500, ErrorMessages.InternalServerError);
+                }
             }
 
-            return JoinUs();
+            return this.JoinUs();
         }
 
         [RequireHttps]
@@ -52,9 +60,20 @@
         [HttpPost]
         public async Task<IActionResult> AddJob(JobInputModel jobInputModel)
         {
-            await this.applicantService.AddApplicantJob(jobInputModel);
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await this.applicantService.AddApplicantJob(jobInputModel);
+                    return this.View(ViewNames.JobSuccess);
+                }
+                catch (Exception)
+                {
+                    return StatusCode(500, ErrorMessages.InternalServerError);
+                }
+            }
 
-            return this.View("JobSuccess");
+            return AddJob();
         }
 
         [RequireHttps]
@@ -69,9 +88,20 @@
         [HttpPost]
         public async Task<IActionResult> AddEducation(EducationInputModel inputModel)
         {
-            await this.applicantService.AddApplicantEducation(inputModel);
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await this.applicantService.AddApplicantEducation(inputModel);
+                    return this.View(ViewNames.EducationSuccess);
+                }
+                catch (Exception)
+                {
+                    return StatusCode(500, ErrorMessages.InternalServerError);
+                }
+            }
 
-            return this.View("EducationSuccess");
+            return AddEducation();
         }
 
         [RequireHttps]

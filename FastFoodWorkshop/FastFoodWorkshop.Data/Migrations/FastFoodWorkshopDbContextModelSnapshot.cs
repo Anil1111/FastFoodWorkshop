@@ -124,11 +124,11 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<int>("ApplicantCVId");
 
-                    b.Property<DateTime?>("EndYear");
+                    b.Property<DateTime?>("EndDate");
 
                     b.Property<string>("OrganizationName");
 
-                    b.Property<DateTime>("StartYear");
+                    b.Property<DateTime>("StartDate");
 
                     b.HasKey("Id");
 

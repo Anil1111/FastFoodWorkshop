@@ -365,8 +365,8 @@ namespace FastFoodWorkshop.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    StartYear = table.Column<DateTime>(nullable: false),
-                    EndYear = table.Column<DateTime>(nullable: true),
+                    StartDate = table.Column<DateTime>(nullable: false),
+                    EndDate = table.Column<DateTime>(nullable: true),
                     OrganizationName = table.Column<string>(nullable: true),
                     ApplicantCVId = table.Column<int>(nullable: false)
                 },

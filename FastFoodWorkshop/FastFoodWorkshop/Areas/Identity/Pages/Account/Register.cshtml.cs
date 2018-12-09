@@ -1,5 +1,7 @@
 ﻿namespace FastFoodWorkshop.Areas.Identity.Pages.Account
 {
+    using Common;
+    using Common.CustomValidations;
     using System;
     using System.ComponentModel.DataAnnotations;
     using System.Text.Encodings.Web;
@@ -11,7 +13,6 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
-    using FastFoodWorkshop.Constants;
 
     [AllowAnonymous]
     public class RegisterModel : PageModel
@@ -41,43 +42,45 @@
         public class InputModel
         {
             [Required]
-            [Display(Name = "First Name", Prompt = "First Name")]
+            [Display(Name = CommonStrings.FirstName, Prompt = CommonStrings.FirstName)]
             [DataType(DataType.Text)]
             public string FirstName { get; set; }
 
             [Required]
-            [Display(Name = "Last Name", Prompt = "Last Name")]
+            [Display(Name = CommonStrings.LastName, Prompt = CommonStrings.LastName)]
             [DataType(DataType.Text)]
             public string LastName { get; set; }
 
             [Required]
-            [Display(Name = "Username", Prompt = "Userame")]
+            [Display(Name = CommonStrings.UserName, Prompt = CommonStrings.UserName)]
             [DataType(DataType.Text)]
             public string Username { get; set; }
 
             [Required]
-            [Display(Name = "Address", Prompt = "Address")]
+            [Display(Name = CommonStrings.Address, Prompt = CommonStrings.Address)]
             [DataType(DataType.Text)]
             public string Address { get; set; }
 
+            [Required]
             [DataType(DataType.Date)]
-            [DisplayFormat(DataFormatString = "{dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+            [DateRestrictToday(ErrorMessage = ErrorMessages.DateCannotBeAfterToday)]
+            //[DisplayFormat(DataFormatString = CommonStrings.DateTimeFormat, ApplyFormatInEditMode = true)]
             public DateTime DateOfBirth { get; set; }
 
             [Required]
             [EmailAddress]
-            [Display(Name = "Email", Prompt = "example@example.org")]
+            [Display(Name = CommonStrings.Email, Prompt = CommonStrings.EmailExample)]
             public string Email { get; set; }
 
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = ErrorMessages.PasswordLength)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password", Prompt = "Password")]
+            [Display(Name = CommonStrings.Password, Prompt = CommonStrings.Password)]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password", Prompt = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = CommonStrings.ConfirmPassword, Prompt = CommonStrings.ConfirmPassword)]
+            [Compare(CommonStrings.Password, ErrorMessage = ErrorMessages.PasswordsDoNotMatch)]
             public string ConfirmPassword { get; set; }
         }
 
@@ -102,7 +105,7 @@
                 };
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
-                await this._userManager.AddToRoleAsync(user, StringConstants.UserRole);
+                await this._userManager.AddToRoleAsync(user, CommonStrings.UserRole);
 
                 if (result.Succeeded)
                 {

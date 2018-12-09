@@ -10,7 +10,7 @@
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
     using Service.Contracts;
-    using Constants;
+    using Common;
 
     [AllowAnonymous]
     public class ExternalLoginModel : PageModel
@@ -121,7 +121,7 @@
 
                 var user = new FastFoodUser { UserName = Input.Email, Email = Input.Email, FirstName = facebookData[0], LastName = facebookData[1] };
                 var result = await _userManager.CreateAsync(user);
-                await _userManager.AddToRoleAsync(user, StringConstants.UserRole);
+                await _userManager.AddToRoleAsync(user, CommonStrings.UserRole);
                 if (result.Succeeded)
                 {
                     result = await _userManager.AddLoginAsync(user, info);

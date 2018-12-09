@@ -1,8 +1,9 @@
 ﻿namespace FastFoodWorkshop.ServiceModels.Applicant
 {
+    using Common;
+    using Common.CustomValidations;
     using Microsoft.AspNetCore.Http;
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
@@ -23,6 +24,7 @@
         [Required]
         [DisplayFormat(DataFormatString = "{dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.DateTime)]
+        [DateRestrictBirthday(ErrorMessage = ErrorMessages.NotOldEnough)]
         public DateTime BirthDate { get; set; }
 
         [Required]
