@@ -1,4 +1,4 @@
-﻿namespace FastFoodWorkshop.Common
+﻿namespace FastFoodWorkshop.Common.StringConstants
 {
     public class CommonStrings
     {

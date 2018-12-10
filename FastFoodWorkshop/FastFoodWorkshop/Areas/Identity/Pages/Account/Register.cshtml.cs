@@ -1,6 +1,6 @@
 ﻿namespace FastFoodWorkshop.Areas.Identity.Pages.Account
 {
-    using Common;
+    using Common.StringConstants;
     using Common.CustomValidations;
     using System;
     using System.ComponentModel.DataAnnotations;

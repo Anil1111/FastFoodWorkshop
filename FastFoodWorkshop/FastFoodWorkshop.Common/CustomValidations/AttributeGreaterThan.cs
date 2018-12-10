@@ -1,6 +1,7 @@
 ﻿namespace FastFoodWorkshop.Common.CustomValidations
 {
     using Common;
+    using Common.StringConstants;
     using System;
     using System.ComponentModel.DataAnnotations;
 

@@ -1,23 +1,32 @@
 ﻿namespace FastFoodWorkshop.Controllers
 {
     using AutoMapper;
-    using Common;
+    using Common.StringConstants;
     using Service.Contracts;
     using ServiceModels.Applicant;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
     using System;
+    using Microsoft.AspNetCore.Http;
 
     public class ApplicantController : BaseController
     {
         private readonly IApplicantService applicantService;
         private readonly IMapper mapper;
+        private readonly IHttpContextAccessor httpContextAccessor;
+        private ISession session => httpContextAccessor.HttpContext.Session;
+        private readonly string joinUsSessionValue;
 
-        public ApplicantController(IApplicantService applicantService, IMapper mapper)
+        public ApplicantController(
+            IApplicantService applicantService, 
+            IMapper mapper,
+            IHttpContextAccessor httpContextAccessor)
         {
             this.mapper = mapper;
             this.applicantService = applicantService;
+            this.httpContextAccessor = httpContextAccessor;
+            this.joinUsSessionValue = Security.SessionValueJoinUsForm;
         }
 
         [AllowAnonymous]
@@ -37,6 +46,7 @@
                 try
                 {
                     await this.applicantService.AddApplicantCv(inputModel);
+                    session.SetString(Security.SessionKeyJoinUsForm, this.joinUsSessionValue);
                     return this.Redirect(ViewNames.AddJob);
                 }
                 catch (Exception)
@@ -52,6 +62,12 @@
         [AllowAnonymous]
         public IActionResult AddJob()
         {
+            if (session.GetString(Security.SessionKeyJoinUsForm) != joinUsSessionValue)
+            {
+                //TODO Add view with a redirect message
+                return this.Redirect(ViewNames.JoinUs);
+            }
+
             return this.View();
         }
 
@@ -80,6 +96,12 @@
         [AllowAnonymous]
         public IActionResult AddEducation()
         {
+            if (session.GetString(Security.SessionKeyJoinUsForm) != joinUsSessionValue)
+            {
+                //TODO Add view with a redirect message
+                return this.Redirect(ViewNames.JoinUs);
+            }
+
             return this.View();
         }
 
@@ -108,6 +130,7 @@
         [AllowAnonymous]
         public IActionResult ApplicantSuccess()
         {
+            session.Remove(Security.SessionKeyJoinUsForm);
             return this.View();
         }
     }

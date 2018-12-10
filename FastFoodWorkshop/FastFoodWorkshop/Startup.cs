@@ -1,16 +1,18 @@
 ﻿namespace FastFoodWorkshop
 {
     using AutoMapper;
-    using Common;
+    using Common.StringConstants;
     using Data;
     using Service;
     using Service.Contracts;
     using ServiceModels.Applicant;
+    using System;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Session;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -33,7 +35,7 @@
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
@@ -69,6 +71,13 @@
                     config.CreateMap<EducationInputModel, Education>();
                 });
 
+            services.AddDistributedMemoryCache();
+            services.AddSession(options => 
+            {
+                options.Cookie.Name = Security.SessionCookieName;
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+                options.Cookie.HttpOnly = true;
+            });
 
             //App services
             services.AddScoped<RoleManager<IdentityRole<int>>>();
@@ -95,12 +104,13 @@
                 app.UseHsts();
             }
 
-            app.UseStatusCodePages();
             app.UseSeedAdminAndRoles();
+            app.UseStatusCodePages();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
+            app.UseSession();
 
             app.UseMvc(routes =>
             { 

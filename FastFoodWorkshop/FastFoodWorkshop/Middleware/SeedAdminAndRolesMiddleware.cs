@@ -1,6 +1,6 @@
 ﻿namespace FastFoodWorkshop.Middleware
 {
-    using Common;
+    using Common.StringConstants;
     using Models;
     using Microsoft.AspNetCore.Identity;
     using System.Linq;

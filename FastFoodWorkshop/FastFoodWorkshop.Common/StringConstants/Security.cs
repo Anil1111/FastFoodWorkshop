@@ -1,4 +1,4 @@
-﻿namespace FastFoodWorkshop.Common
+﻿namespace FastFoodWorkshop.Common.StringConstants
 {
     using System;
 
@@ -21,5 +21,11 @@
         public const string FacebookAppId = "Authentication:Facebook:AppId";
 
         public const string FacebookSecret = "Authentication:Facebook:AppSecret";
+
+        public const string SessionCookieName = ".FastFoodWorkshop";
+
+        public const string SessionKeyJoinUsForm = "JoinUs";
+
+        public const string SessionValueJoinUsForm = "UserHasFilledJoinUsForm";
     }
 }

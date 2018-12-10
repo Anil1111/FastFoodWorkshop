@@ -10,7 +10,7 @@
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
     using Service.Contracts;
-    using Common;
+    using Common.StringConstants;
 
     [AllowAnonymous]
     public class ExternalLoginModel : PageModel

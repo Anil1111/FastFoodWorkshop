@@ -1,7 +1,7 @@
 ﻿namespace FastFoodWorkshop.ServiceModels.Applicant
 {
     using Common.CustomValidations;
-    using Common;
+    using Common.StringConstants;
     using System;
     using System.ComponentModel.DataAnnotations;
 

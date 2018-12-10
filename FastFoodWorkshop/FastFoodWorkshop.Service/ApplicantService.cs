@@ -32,6 +32,8 @@
         {
             var applicantCv = this.mapper.Map<ApplicantCV>(inputModel);
 
+
+
             if (inputModel.Picture != null)
             {
                 using (var memoryStream = new MemoryStream())
