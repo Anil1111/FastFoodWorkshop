@@ -5,11 +5,11 @@
 }
 <h2 class="ffw-text-brown text-center titleMargin">@ViewData["Title"]</h2>
 
-@if (TempData["SuccessJob"] != null)
+@if (TempData[SuccessMessages.TempDataSuccessJobKey] != null)
 {
     <div id="successMessage" class="alert alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close" style="text-decoration:none">&times;</a>
-        <strong>@TempData["SuccessJob"]</strong>
+        <strong>@TempData[SuccessMessages.JobSuccessMessage]</strong>
     </div>
 }
 

@@ -29,16 +29,13 @@
             this.joinUsSessionValue = Security.SessionValueJoinUsForm;
         }
 
-        [AllowAnonymous]
-        [RequireHttps]
         public IActionResult JoinUs()
         {
             return this.View();
         }
 
-        [AllowAnonymous]
+
         [ValidateAntiForgeryToken]
-        [HttpPost]
         public async Task<IActionResult> JoinUs(ApplicantCvInputModel inputModel)
         {
             if (ModelState.IsValid)
@@ -58,8 +55,6 @@
             return this.JoinUs();
         }
 
-        [RequireHttps]
-        [AllowAnonymous]
         public IActionResult AddJob()
         {
             if (session.GetString(Security.SessionKeyJoinUsForm) != joinUsSessionValue)
@@ -71,9 +66,8 @@
             return this.View();
         }
 
-        [RequireHttps]
-        [AllowAnonymous]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddJob(JobInputModel jobInputModel)
         {
             if (ModelState.IsValid)
@@ -93,8 +87,6 @@
             return this.View(jobInputModel);
         }
 
-        [RequireHttps]
-        [AllowAnonymous]
         public IActionResult AddEducation()
         {
             if (session.GetString(Security.SessionKeyJoinUsForm) != joinUsSessionValue)
@@ -106,9 +98,8 @@
             return this.View();
         }
 
-        [RequireHttps]
-        [AllowAnonymous]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddEducation(EducationInputModel inputModel)
         {
             if (ModelState.IsValid)
@@ -128,8 +119,6 @@
             return this.View(inputModel);
         }
 
-        [RequireHttps]
-        [AllowAnonymous]
         public IActionResult ApplicantSuccess()
         {
             session.Remove(Security.SessionKeyJoinUsForm);

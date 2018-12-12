@@ -72,7 +72,7 @@
                 });
 
             services.AddDistributedMemoryCache();
-            services.AddSession(options => 
+            services.AddSession(options =>
             {
                 options.Cookie.Name = Security.SessionCookieName;
                 options.IdleTimeout = TimeSpan.FromDays(1);
@@ -113,7 +113,11 @@
             app.UseSession();
 
             app.UseMvc(routes =>
-            { 
+            {
+                routes.MapRoute(
+                   name: "areas",
+                   template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

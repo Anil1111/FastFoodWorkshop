@@ -130,3 +130,7 @@ body {
         display: block;
         height: 100px;
     }
+
+#logOutButton {
+    color: #8e3904;
+}

@@ -28,6 +28,8 @@
 
         public const string UserRole = "User";
 
+        public const string ManagerArea = "Manager";
+
         public const string RememberMe = "Remember me?";
     }
 }
