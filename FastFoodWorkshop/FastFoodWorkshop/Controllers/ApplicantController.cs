@@ -47,7 +47,7 @@
                 {
                     await this.applicantService.AddApplicantCv(inputModel);
                     session.SetString(Security.SessionKeyJoinUsForm, this.joinUsSessionValue);
-                    return this.Redirect(ViewNames.AddJob);
+                    return this.RedirectToAction(ViewNames.AddJob);
                 }
                 catch (Exception)
                 {
@@ -81,7 +81,8 @@
                 try
                 {
                     await this.applicantService.AddApplicantJob(jobInputModel);
-                    return this.View(ViewNames.JobSuccess);
+                    TempData[SuccessMessages.TempDataSuccessJobKey] = SuccessMessages.JobSuccessMessage;
+                    return this.RedirectToAction();
                 }
                 catch (Exception)
                 {
@@ -89,7 +90,7 @@
                 }
             }
 
-            return AddJob();
+            return this.View(jobInputModel);
         }
 
         [RequireHttps]
@@ -115,7 +116,8 @@
                 try
                 {
                     await this.applicantService.AddApplicantEducation(inputModel);
-                    return this.View(ViewNames.EducationSuccess);
+                    TempData[SuccessMessages.TempDataSuccessEducationKey] = SuccessMessages.EducationSuccessMessage;
+                    return this.RedirectToAction();
                 }
                 catch (Exception)
                 {
@@ -123,7 +125,7 @@
                 }
             }
 
-            return AddEducation();
+            return this.View(inputModel);
         }
 
         [RequireHttps]

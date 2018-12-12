@@ -223,6 +223,8 @@ namespace FastFoodWorkshop.Data.Migrations
 
                     b.Property<int>("ApplicantCVId");
 
+                    b.Property<string>("CompanyName");
+
                     b.Property<DateTime>("EndDate");
 
                     b.Property<string>("JobDescription");

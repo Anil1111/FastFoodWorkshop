@@ -24,6 +24,10 @@
 
         [Required]
         [DataType(DataType.Text)]
+        public string CompanyName { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
         public string JobDescription { get; set; }
     }
 }

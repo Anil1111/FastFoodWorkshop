@@ -75,7 +75,7 @@
             services.AddSession(options => 
             {
                 options.Cookie.Name = Security.SessionCookieName;
-                options.IdleTimeout = TimeSpan.FromMinutes(20);
+                options.IdleTimeout = TimeSpan.FromDays(1);
                 options.Cookie.HttpOnly = true;
             });
 

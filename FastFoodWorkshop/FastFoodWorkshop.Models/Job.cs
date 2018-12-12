@@ -14,6 +14,8 @@
 
         public decimal Salary { get; set; }
 
+        public string CompanyName { get; set; }
+
         public string JobDescription { get; set; }
 
         public int ApplicantCVId { get; set; }

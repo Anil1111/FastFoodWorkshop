@@ -345,6 +345,7 @@ namespace FastFoodWorkshop.Data.Migrations
                     StartDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: false),
                     Salary = table.Column<decimal>(nullable: false),
+                    CompanyName = table.Column<string>(nullable: true),
                     JobDescription = table.Column<string>(nullable: true),
                     ApplicantCVId = table.Column<int>(nullable: false)
                 },

@@ -4,6 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2 class="ffw-text-brown text-center titleMargin">@ViewData["Title"]</h2>
+
+@if (TempData["SuccessEducation"] != null)
+{
+    <div id="successMessage" class="alert alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" style="text-decoration:none">&times;</a>
+        <strong>@TempData["SuccessEducation"]</strong>
+    </div>
+}
+
 <div class="formDiv">
     <div class="w-50 mx-auto mt-4">
         <form method="post" asp-controller="Applicant" asp-action="AddEducation">
@@ -22,13 +31,16 @@
             <div class="align-self-center">
                 <div class="form-group">
                     <label asp-for="OrganizationName" class="ffw-text-brown">Organization Name</label>
-                    <input type="text" asp-for="OrganizationName" class="form-control" placeholder=">Organization Name" />
+                    <input type="text" asp-for="OrganizationName" class="form-control" placeholder="Organization Name" />
                     <span asp-validation-for="OrganizationName" class="text-danger"></span>
                 </div>
             </div>
             <div class="d-flex justify-content-between">
                 <div class="form-group">
                     <button type="submit" class="btn btn-default custom-btn">Add Education</button>
+                </div>
+                <div class="form-group">
+                    <a class="btn btn-default custom-btn" asp-controller="Applicant" asp-action="AddJob">Back</a>
                 </div>
                 <div class="form-group">
                     <a class="btn btn-default custom-btn" asp-controller="Applicant" asp-action="ApplicantSuccess">Finish</a>
