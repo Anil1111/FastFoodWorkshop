@@ -42,6 +42,11 @@
             [Display(Name = CommonStrings.UserName, Prompt = CommonStrings.UserName)]
             public string Username { get; set; }
 
+            //[Required]
+            //[DataType(DataType.EmailAddress)]
+            //[Display(Name = CommonStrings.Email, Prompt = CommonStrings.Email)]
+            //public string Email { get; set; }
+
             [Required]
             [DataType(DataType.Password)]
             [Display(Name = CommonStrings.Password, Prompt = CommonStrings.Password)]
@@ -67,6 +72,7 @@
             ReturnUrl = returnUrl;
         }
 
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");

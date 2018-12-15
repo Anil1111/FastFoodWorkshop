@@ -104,6 +104,7 @@
             }
         }
 
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostConfirmationAsync(string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");

@@ -1990,3 +1990,244 @@ WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
 2018-12-13T01:39:49.4645582+02:00 0HLJ0HBSJ9E74:00000002 [INF] Executed ViewResult - view "Index" executed in 73.6093ms. (f66409e9)
 2018-12-13T01:39:49.4646824+02:00 0HLJ0HBSJ9E74:00000002 [INF] Executed action "FastFoodWorkshop.Areas.Manager.Controllers.ManagerHomeController.Index (FastFoodWorkshop)" in 82.8235ms (afa2e885)
 2018-12-13T01:39:49.4648441+02:00 0HLJ0HBSJ9E74:00000002 [INF] Request finished in 93.3402ms 200 text/html; charset=utf-8 (791a596a)
+2018-12-13T01:46:33.8797287+02:00 0HLJ0HG6468CQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44369/   (ca22a1cb)
+2018-12-13T01:46:34.9163686+02:00 0HLJ0HG6468CQ:00000001 [WRN] No type was specified for the decimal column '"FuelPrice"' on entity type '"DeliveryCar"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-12-13T01:46:34.9176367+02:00 0HLJ0HG6468CQ:00000001 [WRN] No type was specified for the decimal column '"Salary"' on entity type '"Employee"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-12-13T01:46:34.9179795+02:00 0HLJ0HG6468CQ:00000001 [WRN] No type was specified for the decimal column '"Salary"' on entity type '"Job"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-12-13T01:46:34.9181155+02:00 0HLJ0HG6468CQ:00000001 [WRN] No type was specified for the decimal column '"Price"' on entity type '"Product"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'. (b5b4253a)
+2018-12-13T01:46:34.9865652+02:00 0HLJ0HG6468CQ:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"FastFoodWorkshopDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-12-13T01:46:35.6837086+02:00 0HLJ0HG6468CQ:00000001 [INF] Executed DbCommand ("86"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:46:35.7803368+02:00 0HLJ0HG6468CQ:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:46:35.7855626+02:00 0HLJ0HG6468CQ:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:46:35.8163118+02:00 0HLJ0HG6468CQ:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__get_Item_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[BirthDate], [x].[ConcurrencyStamp], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[LastName], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
+2018-12-13T01:46:36.1379724+02:00 0HLJ0HG6468CQ:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\", page = \"\"}". Executing action "FastFoodWorkshop.Controllers.HomeController.Index (FastFoodWorkshop)" (a44c0341)
+2018-12-13T01:46:36.1596859+02:00 0HLJ0HG6468CQ:00000001 [INF] Executing action method "FastFoodWorkshop.Controllers.HomeController.Index (FastFoodWorkshop)" - Validation state: Valid (dad538d7)
+2018-12-13T01:46:36.1697279+02:00 0HLJ0HG6468CQ:00000001 [INF] Executed action method "FastFoodWorkshop.Controllers.HomeController.Index (FastFoodWorkshop)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.5116ms. (50a9e262)
+2018-12-13T01:46:36.2032246+02:00 0HLJ0HG6468CQ:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-12-13T01:46:36.4387640+02:00 0HLJ0HG6468CQ:00000001 [INF] Executed ViewResult - view "Index" executed in 248.4363ms. (f66409e9)
+2018-12-13T01:46:36.4391196+02:00 0HLJ0HG6468CQ:00000001 [INF] Executed action "FastFoodWorkshop.Controllers.HomeController.Index (FastFoodWorkshop)" in 300.4158ms (afa2e885)
+2018-12-13T01:46:36.4720564+02:00 0HLJ0HG6468CQ:00000001 [INF] Request finished in 2602.3282ms 200 text/html; charset=utf-8 (791a596a)
+2018-12-13T01:46:36.7376552+02:00 0HLJ0HG6468CQ:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44369/css/style.css   (ca22a1cb)
+2018-12-13T01:46:36.7399174+02:00 0HLJ0HG6468CQ:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"FastFoodWorkshopDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-12-13T01:46:36.7688338+02:00 0HLJ0HG6468CQ:00000002 [INF] Executed DbCommand ("28"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:46:36.7940036+02:00 0HLJ0HG6468CQ:00000002 [INF] Executed DbCommand ("18"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:46:36.8099512+02:00 0HLJ0HG6468CQ:00000002 [INF] Executed DbCommand ("12"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:46:36.8195663+02:00 0HLJ0HG6468CQ:00000002 [INF] Executed DbCommand ("6"ms) [Parameters=["@__get_Item_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[BirthDate], [x].[ConcurrencyStamp], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[LastName], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
+2018-12-13T01:46:36.8314995+02:00 0HLJ0HG6468CQ:00000002 [INF] The file "/css/style.css" was not modified (f1f8d725)
+2018-12-13T01:46:36.8377403+02:00 0HLJ0HG6468CQ:00000002 [INF] Request finished in 100.0809ms 304 text/css (791a596a)
+2018-12-13T01:46:42.6517530+02:00 0HLJ0HG6468CS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44369/Manager/ManagerHome   (ca22a1cb)
+2018-12-13T01:46:42.6531058+02:00 0HLJ0HG6468CS:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"FastFoodWorkshopDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-12-13T01:46:42.6576767+02:00 0HLJ0HG6468CS:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:46:42.6602838+02:00 0HLJ0HG6468CS:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:46:42.6633141+02:00 0HLJ0HG6468CS:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:46:42.6722774+02:00 0HLJ0HG6468CS:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=["@__get_Item_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[BirthDate], [x].[ConcurrencyStamp], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[LastName], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
+2018-12-13T01:46:42.6774524+02:00 0HLJ0HG6468CS:00000001 [INF] Route matched with "{area = \"Manager\", action = \"Index\", controller = \"ManagerHome\", page = \"\"}". Executing action "FastFoodWorkshop.Areas.Manager.Controllers.ManagerHomeController.Index (FastFoodWorkshop)" (a44c0341)
+2018-12-13T01:46:42.6993571+02:00 0HLJ0HG6468CS:00000001 [INF] Authorization was successful. (0d575a54)
+2018-12-13T01:46:42.7004343+02:00 0HLJ0HG6468CS:00000001 [INF] Executing action method "FastFoodWorkshop.Areas.Manager.Controllers.ManagerHomeController.Index (FastFoodWorkshop)" - Validation state: Valid (dad538d7)
+2018-12-13T01:46:42.7009398+02:00 0HLJ0HG6468CS:00000001 [INF] Executed action method "FastFoodWorkshop.Areas.Manager.Controllers.ManagerHomeController.Index (FastFoodWorkshop)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.354ms. (50a9e262)
+2018-12-13T01:46:42.7179678+02:00 0HLJ0HG6468CS:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-12-13T01:46:42.8384886+02:00 0HLJ0HG6468CS:00000001 [INF] Executed ViewResult - view "Index" executed in 137.1622ms. (f66409e9)
+2018-12-13T01:46:42.8388447+02:00 0HLJ0HG6468CS:00000001 [INF] Executed action "FastFoodWorkshop.Areas.Manager.Controllers.ManagerHomeController.Index (FastFoodWorkshop)" in 161.2414ms (afa2e885)
+2018-12-13T01:46:42.8393779+02:00 0HLJ0HG6468CS:00000001 [INF] Request finished in 189.1885ms 200 text/html; charset=utf-8 (791a596a)
+2018-12-13T01:48:03.5789941+02:00 0HLJ0HG6468CT:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44369/Manager/ManagerHome   (ca22a1cb)
+2018-12-13T01:48:03.5805562+02:00 0HLJ0HG6468CT:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"FastFoodWorkshopDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-12-13T01:48:03.5853402+02:00 0HLJ0HG6468CT:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:03.5885506+02:00 0HLJ0HG6468CT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:03.5910498+02:00 0HLJ0HG6468CT:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:03.5963243+02:00 0HLJ0HG6468CT:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__get_Item_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[BirthDate], [x].[ConcurrencyStamp], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[LastName], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
+2018-12-13T01:48:03.6038343+02:00 0HLJ0HG6468CT:00000001 [INF] Route matched with "{area = \"Manager\", action = \"Index\", controller = \"ManagerHome\", page = \"\"}". Executing action "FastFoodWorkshop.Areas.Manager.Controllers.ManagerHomeController.Index (FastFoodWorkshop)" (a44c0341)
+2018-12-13T01:48:03.6053026+02:00 0HLJ0HG6468CT:00000001 [INF] Authorization was successful. (0d575a54)
+2018-12-13T01:48:03.6056207+02:00 0HLJ0HG6468CT:00000001 [INF] Executing action method "FastFoodWorkshop.Areas.Manager.Controllers.ManagerHomeController.Index (FastFoodWorkshop)" - Validation state: Valid (dad538d7)
+2018-12-13T01:48:03.6057429+02:00 0HLJ0HG6468CT:00000001 [INF] Executed action method "FastFoodWorkshop.Areas.Manager.Controllers.ManagerHomeController.Index (FastFoodWorkshop)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.02ms. (50a9e262)
+2018-12-13T01:48:03.6059466+02:00 0HLJ0HG6468CT:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2018-12-13T01:48:06.5048572+02:00 0HLJ0HG6468CT:00000001 [INF] Executed ViewResult - view "Index" executed in 2898.9352ms. (f66409e9)
+2018-12-13T01:48:06.5061237+02:00 0HLJ0HG6468CT:00000001 [INF] Executed action "FastFoodWorkshop.Areas.Manager.Controllers.ManagerHomeController.Index (FastFoodWorkshop)" in 2901.8275ms (afa2e885)
+2018-12-13T01:48:06.5068242+02:00 0HLJ0HG6468CT:00000001 [INF] Request finished in 2927.8004ms 200 text/html; charset=utf-8 (791a596a)
+2018-12-13T01:48:06.7692080+02:00 0HLJ0HG6468CU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44369/css/style.css   (ca22a1cb)
+2018-12-13T01:48:06.7715218+02:00 0HLJ0HG6468CU:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"FastFoodWorkshopDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-12-13T01:48:06.7715049+02:00 0HLJ0HG6468CT:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44369/css/reset.css   (ca22a1cb)
+2018-12-13T01:48:06.7722963+02:00 0HLJ0HG6468CT:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"FastFoodWorkshopDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-12-13T01:48:06.7724852+02:00 0HLJ0HG6468CV:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44369/css/bootstrap.min.css   (ca22a1cb)
+2018-12-13T01:48:06.7735079+02:00 0HLJ0HG6468CV:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"FastFoodWorkshopDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-12-13T01:48:06.7765932+02:00 0HLJ0HG6468CU:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.7770319+02:00 0HLJ0HG6468D0:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44369/js/jquery-3.3.1.min.js   (ca22a1cb)
+2018-12-13T01:48:06.7777586+02:00 0HLJ0HG6468D1:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44369/js/popper.min.js   (ca22a1cb)
+2018-12-13T01:48:06.7778607+02:00 0HLJ0HG6468D0:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"FastFoodWorkshopDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-12-13T01:48:06.7786767+02:00 0HLJ0HG6468D1:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"FastFoodWorkshopDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-12-13T01:48:06.7799110+02:00 0HLJ0HG6468D2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44369/js/bootstrap.min.js   (ca22a1cb)
+2018-12-13T01:48:06.7804098+02:00 0HLJ0HG6468CU:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.7809841+02:00 0HLJ0HG6468D2:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"FastFoodWorkshopDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-12-13T01:48:06.7827837+02:00 0HLJ0HG6468CU:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.7882066+02:00 0HLJ0HG6468CU:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__get_Item_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[BirthDate], [x].[ConcurrencyStamp], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[LastName], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
+2018-12-13T01:48:06.7908403+02:00 0HLJ0HG6468CT:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.7938357+02:00 0HLJ0HG6468CT:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.7960152+02:00 0HLJ0HG6468CU:00000001 [INF] Sending file. Request path: '"/css/style.css"'. Physical path: '"C:\Users\mirom\OneDrive\Документи\Visual Studio 2017\Projects\FastFoodWorkshop\FastFoodWorkshop\FastFoodWorkshop\wwwroot\css\style.css"' (27b0a520)
+2018-12-13T01:48:06.7961984+02:00 0HLJ0HG6468CU:00000001 [INF] Request finished in 27.9162ms 200 text/css (791a596a)
+2018-12-13T01:48:06.7972345+02:00 0HLJ0HG6468CT:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.8079689+02:00 0HLJ0HG6468CT:00000002 [INF] Executed DbCommand ("8"ms) [Parameters=["@__get_Item_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[BirthDate], [x].[ConcurrencyStamp], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[LastName], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
+2018-12-13T01:48:06.8091076+02:00 0HLJ0HG6468CT:00000002 [INF] The file "/css/reset.css" was not modified (f1f8d725)
+2018-12-13T01:48:06.8093406+02:00 0HLJ0HG6468CT:00000002 [INF] Request finished in 37.8453ms 304 text/css (791a596a)
+2018-12-13T01:48:06.8205409+02:00 0HLJ0HG6468D1:00000001 [INF] Executed DbCommand ("8"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.8212665+02:00 0HLJ0HG6468CV:00000001 [INF] Executed DbCommand ("9"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.8248870+02:00 0HLJ0HG6468D0:00000001 [INF] Executed DbCommand ("12"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.8252447+02:00 0HLJ0HG6468D1:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.8254849+02:00 0HLJ0HG6468CV:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.8282644+02:00 0HLJ0HG6468D1:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.8282644+02:00 0HLJ0HG6468D0:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.8294908+02:00 0HLJ0HG6468CV:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.8319998+02:00 0HLJ0HG6468D1:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__get_Item_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[BirthDate], [x].[ConcurrencyStamp], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[LastName], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
+2018-12-13T01:48:06.8319998+02:00 0HLJ0HG6468D0:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.8328979+02:00 0HLJ0HG6468D1:00000001 [INF] The file "/js/popper.min.js" was not modified (f1f8d725)
+2018-12-13T01:48:06.8331422+02:00 0HLJ0HG6468D1:00000001 [INF] Request finished in 55.3912ms 304 application/javascript (791a596a)
+2018-12-13T01:48:06.8387636+02:00 0HLJ0HG6468CV:00000001 [INF] Executed DbCommand ("7"ms) [Parameters=["@__get_Item_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[BirthDate], [x].[ConcurrencyStamp], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[LastName], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
+2018-12-13T01:48:06.8396231+02:00 0HLJ0HG6468CV:00000001 [INF] The file "/css/bootstrap.min.css" was not modified (f1f8d725)
+2018-12-13T01:48:06.8398838+02:00 0HLJ0HG6468CV:00000001 [INF] Request finished in 67.3961ms 304 text/css (791a596a)
+2018-12-13T01:48:06.8420198+02:00 0HLJ0HG6468D0:00000001 [INF] Executed DbCommand ("8"ms) [Parameters=["@__get_Item_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[BirthDate], [x].[ConcurrencyStamp], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[LastName], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
+2018-12-13T01:48:06.8438153+02:00 0HLJ0HG6468D0:00000001 [INF] The file "/js/jquery-3.3.1.min.js" was not modified (f1f8d725)
+2018-12-13T01:48:06.8440504+02:00 0HLJ0HG6468D0:00000001 [INF] Request finished in 67.0518ms 304 application/javascript (791a596a)
+2018-12-13T01:48:06.8741488+02:00 0HLJ0HG6468D2:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.8947635+02:00 0HLJ0HG6468D2:00000001 [INF] Executed DbCommand ("19"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.9014852+02:00 0HLJ0HG6468D2:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:06.9150235+02:00 0HLJ0HG6468D2:00000001 [INF] Executed DbCommand ("7"ms) [Parameters=["@__get_Item_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[BirthDate], [x].[ConcurrencyStamp], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[LastName], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
+2018-12-13T01:48:06.9159257+02:00 0HLJ0HG6468D2:00000001 [INF] The file "/js/bootstrap.min.js" was not modified (f1f8d725)
+2018-12-13T01:48:06.9162116+02:00 0HLJ0HG6468D2:00000001 [INF] Request finished in 136.2795ms 304 application/javascript (791a596a)
+2018-12-13T01:48:06.9991798+02:00 0HLJ0HG6468CU:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44369/favicon.ico   (ca22a1cb)
+2018-12-13T01:48:06.9999824+02:00 0HLJ0HG6468CU:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"FastFoodWorkshopDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "using lazy-loading proxies " (9958f5bb)
+2018-12-13T01:48:07.0014302+02:00 0HLJ0HG6468CU:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:07.0045729+02:00 0HLJ0HG6468CU:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:07.0074601+02:00 0HLJ0HG6468CU:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-12-13T01:48:07.0104930+02:00 0HLJ0HG6468CU:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[BirthDate], [x].[ConcurrencyStamp], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[LastName], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[PasswordHash], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[SecurityStamp], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__get_Item_0" (0723d8ff)
+2018-12-13T01:48:07.0114019+02:00 0HLJ0HG6468CU:00000002 [INF] The file "/favicon.ico" was not modified (f1f8d725)
+2018-12-13T01:48:07.0116123+02:00 0HLJ0HG6468CU:00000002 [INF] Request finished in 12.4663ms 304 image/x-icon (791a596a)

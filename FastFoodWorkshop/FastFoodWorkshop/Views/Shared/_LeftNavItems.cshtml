@@ -5,14 +5,14 @@
 
 
 <li class="nav-item active">
-    <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+    <a id="navigationAnchor" class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
 </li>
 @if (SignInManager.IsSignedIn(User))
 {
     if (User.IsInRole(CommonStrings.UserRole))
     {
         <li class="nav-item active">
-            <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="Index">My Profile</a>
+            <a id="navigationAnchor" class="nav-link" asp-area="" asp-controller="User" asp-action="MyProfile">My Profile</a>
         </li>
         <li class="nav-item active">
             <a id="navigationAnchor" class="nav-link" asp-controller="Home" asp-action="Index">Propose Recipe</a>
@@ -90,9 +90,9 @@ else
             </a>
 
             <div class="dropdown-menu bg-ffw" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item ffw-text-brown font-weight-bold" asp-action="WhoAreWe" asp-controller="Home">Who are we?</a>
-                <a class="dropdown-item ffw-text-brown font-weight-bold" asp-action="ContactsPage" asp-controller="Home">Contacts Page</a>
-                <a class="dropdown-item ffw-text-brown font-weight-bold" asp-action="JoinUs" asp-controller="Applicant">Join Us</a>
+                <a class="dropdown-item ffw-text-brown font-weight-bold" asp-area="" asp-action="WhoAreWe" asp-controller="Home">Who are we?</a>
+                <a class="dropdown-item ffw-text-brown font-weight-bold" asp-area="" asp-action="ContactsPage" asp-controller="Home">Contacts Page</a>
+                <a class="dropdown-item ffw-text-brown font-weight-bold" asp-area="" asp-action="JoinUs" asp-controller="Applicant">Join Us</a>
             </div>
         </div>
     </li>
@@ -103,8 +103,8 @@ else
             </a>
 
             <div class="dropdown-menu bg-ffw" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Our Menus</a>
-                <a class="dropdown-item ffw-text-brown font-weight-bold" href="#">Create Menu</a>
+                <a class="dropdown-item ffw-text-brown font-weight-bold" asp-area="">Our Menus</a>
+                <a class="dropdown-item ffw-text-brown font-weight-bold" asp-area="">Create Menu</a>
             </div>
         </div>
     </li>

@@ -8,7 +8,7 @@
 <div class="formDiv">
     <div class="w-50 mx-auto mt-4">
         <section>
-            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <form asp-route-returnUrl="@Model.ReturnUrl" enctype="multipart/form-data" method="post">
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="d-flex justify-content-between">
                     <div class="form-group width-size">
@@ -56,6 +56,13 @@
                         <label asp-for="Input.ConfirmPassword" class="ffw-text-brown"></label>
                         <input asp-for="Input.ConfirmPassword" class="form-control" />
                         <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="form-group">
+                        <label asp-for="Input.Picture">Upload Picture</label>
+                        <input asp-for="Input.Picture" type="file" class="form-control-file" name="Picture">
+                        <span asp-validation-for="Input.Picture" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mt-4">

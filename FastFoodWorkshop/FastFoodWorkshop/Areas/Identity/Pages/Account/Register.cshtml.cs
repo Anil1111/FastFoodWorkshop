@@ -7,12 +7,15 @@
     using System.Text.Encodings.Web;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Authorization;
-    using FastFoodWorkshop.Models;
+    using Models;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.UI.Services;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
+    using Microsoft.AspNetCore.Http;
+    using System.IO;
+    using Microsoft.AspNetCore.Hosting;
 
     [AllowAnonymous]
     public class RegisterModel : PageModel
@@ -21,8 +24,10 @@
         private readonly UserManager<FastFoodUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly IHostingEnvironment environment;
 
         public RegisterModel(
+            IHostingEnvironment environment,
             UserManager<FastFoodUser> userManager,
             SignInManager<FastFoodUser> signInManager,
             ILogger<RegisterModel> logger,
@@ -64,7 +69,6 @@
             [Required]
             [DataType(DataType.Date)]
             [DateRestrictToday(ErrorMessage = ErrorMessages.DateCannotBeAfterToday)]
-            //[DisplayFormat(DataFormatString = CommonStrings.DateTimeFormat, ApplyFormatInEditMode = true)]
             public DateTime DateOfBirth { get; set; }
 
             [Required]
@@ -82,6 +86,9 @@
             [Display(Name = CommonStrings.ConfirmPassword, Prompt = CommonStrings.ConfirmPassword)]
             [Compare(CommonStrings.Password, ErrorMessage = ErrorMessages.PasswordsDoNotMatch)]
             public string ConfirmPassword { get; set; }
+
+            [BindProperty]
+            public IFormFile Picture { get; set; }
         }
 
         public void OnGet(string returnUrl = null)
@@ -91,6 +98,13 @@
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+            IFormFile formFile = null;
+
+            if (HttpContext.Request.Form.Files.Count > 0)
+            {
+                formFile = HttpContext.Request.Form.Files[0];
+            }
+
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
@@ -103,6 +117,15 @@
                     BirthDate = Input.DateOfBirth,
                     Email = Input.Email,
                 };
+
+                if (formFile != null)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await formFile.CopyToAsync(memoryStream);
+                        user.Picture = memoryStream.ToArray();
+                    }
+                }
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 await this._userManager.AddToRoleAsync(user, CommonStrings.UserRole);

@@ -7,17 +7,19 @@
 
     public class HomeController : BaseController
     {
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return this.View();
         }
 
-
+        [AllowAnonymous]
         public IActionResult WhoAreWe()
         {
             return this.View();
         }
 
+        [AllowAnonymous]
         public IActionResult ContactsPage()
         {
             return this.View();

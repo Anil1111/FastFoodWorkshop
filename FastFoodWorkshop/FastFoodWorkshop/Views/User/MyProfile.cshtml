@@ -1,0 +1,13 @@
+﻿@model UserDetailsViewModel
+@{
+    ViewData["Title"] = "MyProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="ffw-text-brown text-center titleMargin">@ViewData["Title"]</h2>
+<div class="formDiv">
+    <div class="w-50 mx-auto mt-4">
+        <img src="@String.Format("data:image/jpg;base64,{0}", Model.Picture)"/>
+    </div>
+</div>
+

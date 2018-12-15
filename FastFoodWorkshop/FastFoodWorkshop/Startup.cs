@@ -19,6 +19,8 @@
     using Microsoft.Extensions.Logging;
     using Middleware;
     using Models;
+    using Microsoft.AspNetCore.Identity.UI.Services;
+    using FastFoodWorkshop.ServiceModels.User;
 
     public class Startup
     {
@@ -62,14 +64,23 @@
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(options => 
+            {
+                options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             services.AddAutoMapper(config =>
                 {
                     config.CreateMap<ApplicantCvInputModel, ApplicantCV>()
                     .ForMember(dest => dest.Picture, opt => opt.Ignore());
+
                     config.CreateMap<JobInputModel, Job>();
                     config.CreateMap<EducationInputModel, Education>();
+                    config.CreateMap<FastFoodUser, UserDetailsViewModel>()
+                    .ForMember(dest => dest.Picture, opt => opt.Ignore());
                 });
+
 
             services.AddDistributedMemoryCache();
             services.AddSession(options =>

@@ -35,6 +35,8 @@
         }
 
 
+        [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> JoinUs(ApplicantCvInputModel inputModel)
         {
@@ -55,6 +57,7 @@
             return this.JoinUs();
         }
 
+        [AllowAnonymous]
         public IActionResult AddJob()
         {
             if (session.GetString(Security.SessionKeyJoinUsForm) != joinUsSessionValue)
@@ -67,6 +70,7 @@
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddJob(JobInputModel jobInputModel)
         {
@@ -87,6 +91,7 @@
             return this.View(jobInputModel);
         }
 
+        [AllowAnonymous]
         public IActionResult AddEducation()
         {
             if (session.GetString(Security.SessionKeyJoinUsForm) != joinUsSessionValue)
@@ -99,6 +104,7 @@
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddEducation(EducationInputModel inputModel)
         {
@@ -119,6 +125,7 @@
             return this.View(inputModel);
         }
 
+        [AllowAnonymous]
         public IActionResult ApplicantSuccess()
         {
             session.Remove(Security.SessionKeyJoinUsForm);
