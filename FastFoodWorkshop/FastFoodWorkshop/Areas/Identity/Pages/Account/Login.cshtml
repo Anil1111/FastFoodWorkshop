@@ -1,6 +1,5 @@
 ﻿@page
 @model LoginModel
-
 @{
     ViewData["Title"] = "Log in";
 }
@@ -41,9 +40,12 @@
             </form>
         </section>
         <section>
-            @if (Model.ExternalLogins.Count == 0)
+            @if ((Model.ExternalLogins?.Count ?? 0) == 0)
             {
-                <p>No external logins provided</p>
+                <p class="text-center text-danger">Invalid Username or Password.</p>
+                <div class="d-flex justify-content-center mt-4">
+                    <a id="navigationAnchor" class="btn btn-default custom-btn" asp-page="./Login">Back</a>
+                </div>
             }
             else
             {

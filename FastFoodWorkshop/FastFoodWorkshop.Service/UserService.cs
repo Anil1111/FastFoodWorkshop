@@ -24,7 +24,7 @@
             this.userManager = userManager;
             this.mapper = mapper;
         }
-        
+
         public FastFoodUser CreateManager(
             string firstName,
             string lastName,
@@ -54,7 +54,11 @@
             var currentUser = await this.userManager.GetUserAsync(user);
             var viewModel = this.mapper.Map<UserDetailsViewModel>(currentUser);
 
-            viewModel.Picture = Convert.ToBase64String(currentUser.Picture);
+            if (viewModel.Picture != null)
+            {
+                viewModel.Picture = Convert.ToBase64String(currentUser.Picture);
+            }
+
             return viewModel;
         }
     }
